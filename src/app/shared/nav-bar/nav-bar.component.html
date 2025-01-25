@@ -1,6 +1,8 @@
 <nav>
-  <div class="nav-logo"></div>
   <ul>
+    <div class="nav-logo">
+      <img src="/assets/img/logo/logo1.png" alt="" />
+    </div>
     @for (page of pages; track $index) {
     <li>
       <a href="{{ page.path }}">{{ page.title }}</a>

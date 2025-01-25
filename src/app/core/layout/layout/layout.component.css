@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.container {
+  display: block;
+  height: 100%;
+  background-color: aqua;
+  max-width: 1280px;
+  margin: auto;
+}

@@ -10,7 +10,7 @@ import { NavBarPage } from './models';
 export class NavBarComponent {
   public pages: NavBarPage[] = [
     {
-      title: 'Home',
+      title: 'Accueil',
       path: 'home',
     },
     {
@@ -22,11 +22,23 @@ export class NavBarComponent {
       path: 'casa-scuola',
     },
     {
-      title: 'Location',
+      title: 'La propriété',
+      path: 'property',
+    },
+    {
+      title: 'Situation',
       path: 'location',
     },
     {
-      title: 'Favourite',
+      title: 'Découvertes',
+      path: 'discoveries',
+    },
+    {
+      title: 'Atmosphère',
+      path: 'atmosphere',
+    },
+    {
+      title: 'Coups de coeur',
       path: 'favourite',
     },
     {

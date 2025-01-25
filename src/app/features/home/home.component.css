@@ -1,8 +1,30 @@
 .page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax {
   height: 100vh;
-  background-color: aqua;
+  background-image: url("../../../../public/assets/img/backgrounds/background_1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.background {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.normal {
+  padding: 100px;
+  background-color: #f4f4f4;
+  text-align: center;
 }
