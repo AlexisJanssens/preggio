@@ -1,0 +1,37 @@
+import { Component } from '@angular/core';
+import { NavBarPage } from './models';
+
+@Component({
+  selector: 'app-nav-bar',
+  imports: [],
+  templateUrl: './nav-bar.component.html',
+  styleUrl: './nav-bar.component.css',
+})
+export class NavBarComponent {
+  public pages: NavBarPage[] = [
+    {
+      title: 'Home',
+      path: 'home',
+    },
+    {
+      title: 'Casa Peppe',
+      path: 'casa-peppe',
+    },
+    {
+      title: 'Casa Scuola',
+      path: 'casa-scuola',
+    },
+    {
+      title: 'Location',
+      path: 'location',
+    },
+    {
+      title: 'Favourite',
+      path: 'favourite',
+    },
+    {
+      title: 'Contact',
+      path: 'contact',
+    },
+  ];
+}

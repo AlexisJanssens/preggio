@@ -1,0 +1,9 @@
+<nav>
+  <ul>
+    @for (page of pages; track $index) {
+    <li>
+      <a href="{{ page.path }}">{{ page.title }}</a>
+    </li>
+    }
+  </ul>
+</nav>
