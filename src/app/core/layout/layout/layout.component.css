@@ -7,6 +7,17 @@
   display: block;
   height: 100%;
   background-color: aqua;
-  max-width: 1280px;
   margin: auto;
+  position: relative;
+}
+
+.nav-container {
+  transition: transform 0.3s ease-in-out;
+  height: 76px;
+  max-width: 100%;
+}
+
+.nav-container.hidden {
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-200%);
 }

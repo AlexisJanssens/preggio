@@ -1,0 +1,26 @@
+.container {
+  scrollbar-width: none;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.bg1 {
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("../../../../public/assets/img/backgrounds/background_1.jpg");
+}
+.bg2 {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  background-size: cover;
+  background-image: url("../../../../public/assets/img/backgrounds/background_2.jpg");
+}
+
+.filter {
+  background-color: rgb(96, 120, 119, 0.8);
+  height: 100vh;
+}

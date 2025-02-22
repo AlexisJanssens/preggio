@@ -1,0 +1,14 @@
+<div class="slider-container">
+  <h3>{{ title }}</h3>
+  <div class="slider">
+    <ul>
+      @for(img of images; track img) {
+      <li [style.transform]="transformStyle">
+        <div class="img-container">
+          <div class="img" [style.background-color]="img"></div>
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

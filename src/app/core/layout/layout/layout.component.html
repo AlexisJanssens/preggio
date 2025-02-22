@@ -1,4 +1,8 @@
 <div class="container">
-  <app-nav-bar></app-nav-bar>
+  <app-nav-bar
+    id="nav-bar"
+    [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
+  ></app-nav-bar>
+
   <router-outlet></router-outlet>
 </div>

@@ -1,30 +1,106 @@
 .page-container {
   height: 100%;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  overflow-x: hidden;
   overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 3px;
+  scrollbar-width: none;
+  scroll-snap-type: y mandatory;
 }
 
-.parallax {
-  height: 100vh;
-  background-image: url("../../../../public/assets/img/backgrounds/background_1.jpg");
-  background-attachment: fixed;
+.container-top {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+section {
+  scroll-snap-align: start;
   background-size: cover;
-  background-position: center;
+  color: white;
+  background-color: var(--bg, --color-black);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  &.image {
+    transform: translateZ(-1px) scale(1.5);
+    /* Force the background image to fill the whole element. */
+    background-size: cover;
+    /* Keep the image from overlapping sibling elements. */
+    z-index: -1;
+    height: 100vh;
+  }
+  &.text {
+    height: 100vh;
+    background-color: rgb(96, 120, 119);
+    color: white;
+  }
 }
 
-.background {
-  height: 100vh;
+.bg1 {
+  background-image: url("../../../../public/assets/img/backgrounds/background_1.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.bg2 {
+  background-image: url("../../../../public/assets/img/backgrounds/background_2.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+.filter {
+  background-color: rgb(96, 120, 119, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  text-align: center;
 }
 
-.normal {
-  padding: 100px;
-  background-color: #f4f4f4;
+.texte {
+  font-size: 20px;
+  grid-column: 1 / 4;
   text-align: center;
+  align-self: center;
+}
+
+.image-gauche {
+  grid-column: 1 / 2;
+  grid-row: 2;
+  text-align: right;
+  background-color: tomato;
+  height: 252px;
+  min-width: 300px;
+}
+
+.image-droite {
+  grid-column: 3 / 4;
+  grid-row: 2;
+  text-align: left;
+  background-color: violet;
+  height: 252px;
+  min-width: 300px;
+}
+
+.texte-milieu {
+  grid-column: 2 / 3;
+  grid-row: 2;
+  font-size: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
