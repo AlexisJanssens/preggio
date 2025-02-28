@@ -29,7 +29,7 @@ section {
     display: grid;
     justify-content: space-between;
     gap: 2rem;
-    height: 38vh;
+    min-height: 38vh;
   }
 }
 
@@ -47,6 +47,7 @@ section {
   background-color: tomato;
   height: 252px;
   min-width: 300px;
+  margin: 2rem 0;
 }
 
 .image-droite {
@@ -55,6 +56,7 @@ section {
   background-color: violet;
   height: 252px;
   min-width: 300px;
+  margin: 2rem 0;
 }
 
 .texte-milieu {
