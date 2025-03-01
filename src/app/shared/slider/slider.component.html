@@ -1,5 +1,11 @@
 <div class="slider-container">
   <h3>{{ title }}</h3>
+  <div class="chevron-left" (click)="previousSlide()">
+    <fa-icon [icon]="chevronLeft"></fa-icon>
+  </div>
+  <div class="chevron-right" (click)="nextSlide()">
+    <fa-icon [icon]="chevronRight"></fa-icon>
+  </div>
   <div class="slider">
     <ul>
       @for(img of images; track img) {
