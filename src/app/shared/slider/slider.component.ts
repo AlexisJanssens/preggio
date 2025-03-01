@@ -14,7 +14,7 @@ export class SliderComponent implements OnInit, OnDestroy {
   private intervalId: number = 0;
 
   get transformStyle() {
-    return `translateX(-${this.currentSlide * 450}px)`;
+    return `translateX(-${this.currentSlide * 400}px)`;
   }
 
   startSlider() {

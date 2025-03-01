@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class CardComponent {
   @Input() title!: string;
   @Input() link!: string;
+  @Input() pathLink!: string;
 }

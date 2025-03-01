@@ -9,10 +9,11 @@ import {
 } from '@angular/core';
 import { NavBarService } from '../../shared/nav-bar.service';
 import { SliderComponent } from '../../shared/slider/slider.component';
+import { CardComponent } from '../../shared/card/card.component';
 
 @Component({
   selector: 'app-home',
-  imports: [SliderComponent],
+  imports: [CardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

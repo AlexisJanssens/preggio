@@ -22,21 +22,21 @@ ul {
 
 .slider {
   margin: auto;
-  width: 450px;
-  height: 350px;
+  width: 400px;
+  height: 300px;
   overflow: hidden;
   border-radius: 3px;
 }
 
 .img {
-  width: 450px;
-  height: 350px;
+  width: 400px;
+  height: 300px;
   border-radius: 3px;
 }
 
 .img-container {
-  width: 450px;
-  height: 350px;
+  width: 400px;
+  height: 300px;
   border-radius: 3px;
 }
 
@@ -49,8 +49,8 @@ h3 {
 }
 
 .slider-container {
-  width: 500px;
-  height: 426px;
-  background-color: rgba(255, 255, 255, 0.75);
+  width: 450px;
+  height: 380px;
+  background-color: rgba(255, 255, 255, 0.381);
   box-shadow: 3px 20px 15px 0px rgba(0, 0, 0, 0.15);
 }

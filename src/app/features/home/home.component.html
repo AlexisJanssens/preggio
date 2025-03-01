@@ -1,28 +1,40 @@
-<div class="page-container" #pageContainer>
-  <section class="image bg1"></section>
-  <section class="text bg2">
-    <div class="filter">
-      <div class="container">
-        <div class="container-top">
-          <div class="image-gauche"></div>
-          <div class="texte">
-            <p>
-              Au cœur de l’Italie, à la frontière de l’Ombrie et de la Toscane,
-              au milieu d’un environnement calme et superbe, à 3 km du village
-              de Preggio, « Le Vigne » est un ancien petit hameau restauré tout
-              en conservant son caractère authentique.
-            </p>
-            <p>
-              La piscine privée (6m x 13m), est très bien située avec vue sur
-              les collines verdoyantes d’Ombrie.
-            </p>
-            <p>Terrasse et jardin privatifs pour chaque maison.</p>
-          </div>
-          <div class="image-droite"></div>
-        </div>
-        <app-slider></app-slider>
+<div id="parallax-wrapper">
+  <section>
+    <div class="p-one parallax-inner"></div>
+  </section>
+
+  <section class="buffer">
+    <div class="image-gauche"></div>
+    <div class="texte">
+      <p>
+        Au cœur de l’Italie, à la frontière de l’Ombrie et de la Toscane, au
+        milieu d’un environnement calme et superbe, à 3 km du village de
+        Preggio, « Le Vigne » est un ancien petit hameau restauré tout en
+        conservant son caractère authentique.
+      </p>
+      <p>
+        La piscine privée (6m x 13m), est très bien située avec vue sur les
+        collines verdoyantes d’Ombrie.
+      </p>
+      <p>Terrasse et jardin privatifs pour chaque maison.</p>
+    </div>
+    <div class="image-droite"></div>
+  </section>
+  <section>
+    <div class="p-two parallax-inner">
+      <div class="cards-container">
+        <app-card
+          title="casa pepe"
+          link="découvrir"
+          pathLink="casa-peppe"
+        ></app-card>
+        <app-card
+          title="casa scuola"
+          link="découvrir"
+          pathLink="casa-scuola"
+        ></app-card>
+        <app-card title="situation" link="découvrir"></app-card>
       </div>
     </div>
   </section>
 </div>
-k
