@@ -1,7 +1,11 @@
 <div class="container">
   <div class="top-layer"></div>
   <div class="grid-wrapper">
-    <app-slider title="Intérieur" class="top-left"></app-slider>
+    <app-slider
+      title="Intérieur"
+      class="top-left"
+      [images]="insideImgs"
+    ></app-slider>
     <app-slider title="Extérieur" class="top-right"></app-slider>
     <app-slider title="Plans" class="bottom-left"></app-slider>
     <div class="description">

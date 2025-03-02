@@ -1,0 +1,61 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.background-top {
+  background-image: url("../../../../public/assets/img/backgrounds/background_1.jpg");
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: calc(100vh - 600px);
+  width: 100%;
+}
+
+.container-slide {
+  background-color: rgb(133, 144, 140);
+
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.map {
+  height: 600px;
+  width: 100%;
+  background-image: url("../../../../public/assets/img/backgrounds/umbria-map.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.background {
+  position: fixed;
+  height: 400px;
+  width: 100%;
+  background-color: aquamarine;
+}
+
+.region {
+  display: flex;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.region-description {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.region-description {
+  color: white;
+  font-size: 18px;
+  & p {
+    font-weight: 300;
+  }
+}

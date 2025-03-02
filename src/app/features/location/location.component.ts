@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { SliderComponent } from '../../shared/slider/slider.component';
 
 @Component({
   selector: 'app-location',
-  imports: [],
+  imports: [SliderComponent],
   templateUrl: './location.component.html',
-  styleUrl: './location.component.css'
+  styleUrl: './location.component.css',
 })
-export class LocationComponent {
-
-}
+export class LocationComponent {}

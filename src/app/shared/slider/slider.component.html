@@ -11,7 +11,9 @@
       @for(img of images; track img) {
       <li [style.transform]="transformStyle">
         <div class="img-container">
-          <div class="img" [style.background-color]="img"></div>
+          <div class="img" [style.background-color]="img">
+            <img [src]="img" />
+          </div>
         </div>
       </li>
       }

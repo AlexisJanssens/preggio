@@ -10,4 +10,6 @@ export class CardComponent {
   @Input() title!: string;
   @Input() link!: string;
   @Input() pathLink!: string;
+  @Input() noLink: boolean = false;
+  @Input() imagePath!: string;
 }

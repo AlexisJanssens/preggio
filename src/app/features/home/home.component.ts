@@ -25,6 +25,12 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   private windowSize: number = window.innerHeight;
 
+  imagePaths = {
+    pepe: '/assets/img/CASAPEPPE/bg_CASAPEPPE_1920.jpg',
+    scuola: '/assets/img/SCUOLA/Casascuola_IMG_8298.jpg',
+    situation: 'assets/img/SITUATION/IMG_1079cad.jpg',
+  };
+
   ngAfterViewInit(): void {
     this.scrollListener = this.onScroll.bind(this);
     this.pageContainer.nativeElement.addEventListener(

@@ -4,7 +4,9 @@
   </section>
 
   <section class="buffer">
-    <div class="image-gauche"></div>
+    <div class="image-gauche">
+      <img src="/assets/img/DECOUVERTES/DECOUVERTES_IMG_1232_1920.jpg" alt="" />
+    </div>
     <div class="texte">
       <p>
         Au cœur de l’Italie, à la frontière de l’Ombrie et de la Toscane, au
@@ -18,7 +20,9 @@
       </p>
       <p>Terrasse et jardin privatifs pour chaque maison.</p>
     </div>
-    <div class="image-droite"></div>
+    <div class="image-droite">
+      <img src="/assets/img/PROPRIETE/hamac_1920.jpg" alt="" />
+    </div>
   </section>
   <section>
     <div class="p-two parallax-inner">
@@ -27,13 +31,20 @@
           title="casa pepe"
           link="découvrir"
           pathLink="casa-peppe"
+          [imagePath]="imagePaths.pepe"
         ></app-card>
         <app-card
           title="casa scuola"
           link="découvrir"
           pathLink="casa-scuola"
+          [imagePath]="imagePaths.scuola"
         ></app-card>
-        <app-card title="situation" link="découvrir"></app-card>
+        <app-card
+          title="situation"
+          link="découvrir"
+          pathLink="situation"
+          [imagePath]="imagePaths.situation"
+        ></app-card>
       </div>
     </div>
   </section>
