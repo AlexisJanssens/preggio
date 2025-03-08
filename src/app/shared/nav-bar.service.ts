@@ -1,22 +1,19 @@
-import { Injectable, signal } from '@angular/core';
+// nav-bar.service.ts
+import { Injectable, Signal, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NavBarService {
-  constructor() {}
+  private _navBarVisible = signal(true);
 
-  public navBarState = signal<boolean>(true);
+  public navBarState: Signal<boolean> = this._navBarVisible.asReadonly();
 
-  hideNavBar(): void {
-    this.navBarState.set(false);
+  public showNavBar(): void {
+    this._navBarVisible.set(true);
   }
 
-  showNavBar(): void {
-    this.navBarState.set(true);
-  }
-
-  getNavBarState(): boolean {
-    return this.navBarState();
+  public hideNavBar(): void {
+    this._navBarVisible.set(false);
   }
 }

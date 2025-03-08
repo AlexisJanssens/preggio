@@ -1,3 +1,4 @@
+// layout.component.ts
 import { NavBarService } from './../../../shared/nav-bar.service';
 import {
   AfterViewInit,
@@ -9,10 +10,12 @@ import {
 } from '@angular/core';
 import { NavBarComponent } from '../../../shared/nav-bar/nav-bar.component';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
-  imports: [NavBarComponent, RouterOutlet],
+  standalone: true,
+  imports: [NavBarComponent, RouterOutlet, CommonModule],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css',
 })
@@ -32,8 +35,6 @@ export class LayoutComponent implements AfterViewInit, OnDestroy {
       'scroll',
       this.scrollListener
     );
-
-    console.log(this.pageContainer.nativeElement);
   }
 
   ngOnDestroy(): void {
@@ -43,9 +44,8 @@ export class LayoutComponent implements AfterViewInit, OnDestroy {
     );
   }
 
-  private onScroll(event: Event): void {
+  private onScroll(): void {
     const scrollPosition = this.pageContainer.nativeElement.scrollTop;
-    console.log(scrollPosition);
 
     if (scrollPosition > this.windowSize * 0.75) {
       this.navBarService.hideNavBar();
