@@ -3,24 +3,51 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../../../../public/assets/img/SCUOLA/Casascuola_IMG_8298.jpg");
+  background-image: url("../../../../public/assets/img/SCUOLA/bg_scuola_HD.jpg");
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .top-layer {
-  height: calc(100vh - 440px);
+  height: 100vh;
   width: 100%;
 }
 
-.grid-wrapper {
+.flex-wrapper {
+  padding: 2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgba(96, 120, 119, 0.5);
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.mid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+/* .grid-wrapper {
   display: grid;
   width: 100%;
   padding: 2rem;
-  background-color: rgba(196, 196, 196, 0.856);
   gap: 4rem;
 }
+
+
 
 .top-left {
   grid-column: 1 / 2;
@@ -44,7 +71,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
+} */
 
 .description {
   width: 454px;
@@ -56,10 +83,29 @@
   align-items: center;
   flex-wrap: wrap;
   overflow-y: scroll;
+  background-color: rgba(240, 248, 255, 0.721);
+  padding: 2rem;
+  font-size: 18px;
 }
 
 footer {
   height: 300px;
   width: 100%;
   background-color: rgb(133, 144, 140);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgba(96, 120, 119, 1);
+  padding: 2rem;
+}
+
+.calendar {
+  width: 711px;
 }

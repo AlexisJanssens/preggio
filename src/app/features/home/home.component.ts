@@ -10,50 +10,25 @@ import {
 import { NavBarService } from '../../shared/nav-bar.service';
 import { SliderComponent } from '../../shared/slider/slider.component';
 import { CardComponent } from '../../shared/card/card.component';
+import { FadeSliderComponent } from '../../shared/fade-slider/fade-slider.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CardComponent],
+  imports: [CardComponent, FadeSliderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('pageContainer') pageContainer!: ElementRef;
-
-  private scrollListener: any;
-  private NavBarService = inject(NavBarService);
-
-  private windowSize: number = window.innerHeight;
-
+export class HomeComponent {
   imagePaths = {
     pepe: '/assets/img/CASAPEPPE/bg_CASAPEPPE_1920.jpg',
     scuola: '/assets/img/SCUOLA/Casascuola_IMG_8298.jpg',
     situation: 'assets/img/SITUATION/IMG_1079cad.jpg',
   };
 
-  ngAfterViewInit(): void {
-    this.scrollListener = this.onScroll.bind(this);
-    this.pageContainer.nativeElement.addEventListener(
-      'scroll',
-      this.scrollListener
-    );
-  }
-
-  ngOnDestroy(): void {
-    this.pageContainer.nativeElement.removeEventListener(
-      'scroll',
-      this.scrollListener
-    );
-  }
-
-  private onScroll(event: Event): void {
-    const scrollPosition = this.pageContainer.nativeElement.scrollTop;
-    console.log('Position actuelle du scroll : ', scrollPosition);
-
-    if (scrollPosition > this.windowSize * 0.75) {
-      this.NavBarService.hideNavBar();
-    } else {
-      this.NavBarService.showNavBar();
-    }
-  }
+  sliders = [
+    '/assets/img/ACCUEIL/drone_bg1.jpg',
+    '/assets/img/ACCUEIL/drone_bg2.jpg',
+    '/assets/img/ACCUEIL/drone_bg3.jpg',
+    '/assets/img/ACCUEIL/drone_bg4.jpg',
+  ];
 }

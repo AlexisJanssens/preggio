@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="content">
+    @if (discovery) {
+    <div class="text">
+      <h1>{{ discovery.title }}</h1>
+      <p>{{ discovery.content }}</p>
+    </div>
+    } @else {
+    <div class="header">
+      <h1>Erreur</h1>
+      <p>La découverte n'a pas été trouvée.</p>
+    </div>
+    }
+  </div>
+</div>

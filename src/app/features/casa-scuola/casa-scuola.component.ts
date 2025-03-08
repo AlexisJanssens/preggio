@@ -10,4 +10,11 @@ import { SliderComponent } from '../../shared/slider/slider.component';
   templateUrl: './casa-scuola.component.html',
   styleUrl: './casa-scuola.component.css',
 })
-export class CasaScuolaComponent {}
+export class CasaScuolaComponent {
+  sliders = [
+    '/assets/img/ACCUEIL/drone_bg1.jpg',
+    '/assets/img/ACCUEIL/drone_bg2.jpg',
+    '/assets/img/ACCUEIL/drone_bg3.jpg',
+    '/assets/img/ACCUEIL/drone_bg4.jpg',
+  ];
+}

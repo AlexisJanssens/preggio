@@ -8,6 +8,7 @@ import { DiscoveriesComponent } from './features/discoveries/discoveries.compone
 import { AtmosphereComponent } from './features/atmosphere/atmosphere.component';
 import { FavouriteComponent } from './features/favourite/favourite.component';
 import { ContactComponent } from './features/contact/contact.component';
+import { DiscoveryDetailComponent } from './features/discoveries/discovery-detail/discovery-detail.component';
 
 export const routes: Routes = [
   {
@@ -44,6 +45,12 @@ export const routes: Routes = [
     path: 'discoveries',
     title: 'Discoveries',
     component: DiscoveriesComponent,
+    children: [],
+  },
+  {
+    path: 'discoveries/:link',
+    title: 'Discovery Detail',
+    component: DiscoveryDetailComponent,
     children: [],
   },
   {

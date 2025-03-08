@@ -1,16 +1,19 @@
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FadeSliderComponent } from '../fade-slider/fade-slider.component';
 
 @Component({
   selector: 'app-slider',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, FadeSliderComponent],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.css',
 })
 export class SliderComponent {
-  @Input() images: string[] = ['red', 'blue', 'green', 'yellow'];
+  @ViewChild(FadeSliderComponent) fadeSlider!: FadeSliderComponent;
+
+  @Input() images: string[] = [];
   @Input() title: string = 'Slider';
 
   currentSlide = 0;
@@ -18,50 +21,27 @@ export class SliderComponent {
   chevronLeft = faChevronLeft;
   chevronRight = faChevronRight;
 
-  private intervalId: number = 0;
-
-  get transformStyle() {
-    return `translateX(-${this.currentSlide * 400}px)`;
+  onSlideChange(index: number) {
+    this.currentSlide = index;
   }
-
-  // startSlider() {
-  //   if (this.images.length === 0) {
-  //     return;
-  //   }
-
-  //   if (this.currentSlide === this.images.length - 1) {
-  //     this.currentSlide = 0;
-  //   } else {
-  //     this.currentSlide++;
-  //   }
-  // }
-
-  // ngOnInit(): void {
-  //   this.intervalId = window.setInterval(() => {
-  //     this.startSlider();
-  //   }, 3000);
-  // }
-
-  // ngOnDestroy(): void {
-  //   if (this.intervalId) {
-  //     clearInterval(this.intervalId);
-  //   }
-  // }
 
   nextSlide() {
-    console.log('nextSlide');
-
     if (this.currentSlide === this.images.length - 1) {
       this.currentSlide = 0;
+    } else {
+      this.currentSlide++;
     }
-    this.currentSlide++;
+
+    this.fadeSlider.isAutoplay = false;
   }
 
-  previousSlide() {
-    console.log('previousSlide');
+  prevSlide() {
     if (this.currentSlide === 0) {
       this.currentSlide = this.images.length - 1;
+    } else {
+      this.currentSlide--;
     }
-    this.currentSlide--;
+
+    this.fadeSlider.isAutoplay = false;
   }
 }

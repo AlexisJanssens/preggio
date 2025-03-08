@@ -10,7 +10,7 @@
 }
 
 .top-layer {
-  height: calc(100vh - 440px);
+  height: 100vh;
   width: 100%;
 }
 
@@ -18,7 +18,7 @@
   display: grid;
   width: 100%;
   padding: 2rem;
-  background-color: rgba(196, 196, 196, 0.856);
+  background-color: rgba(196, 196, 196, 0.5);
   gap: 4rem;
 }
 
@@ -62,4 +62,11 @@ footer {
   height: 300px;
   width: 100%;
   background-color: rgb(133, 144, 140);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  width: 711px;
 }

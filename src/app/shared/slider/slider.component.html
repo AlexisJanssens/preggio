@@ -1,22 +1,16 @@
 <div class="slider-container">
   <h3>{{ title }}</h3>
-  <div class="chevron-left" (click)="previousSlide()">
+  <div class="chevron-left" (click)="prevSlide()">
     <fa-icon [icon]="chevronLeft"></fa-icon>
   </div>
   <div class="chevron-right" (click)="nextSlide()">
     <fa-icon [icon]="chevronRight"></fa-icon>
   </div>
   <div class="slider">
-    <ul>
-      @for(img of images; track img) {
-      <li [style.transform]="transformStyle">
-        <div class="img-container">
-          <div class="img" [style.background-color]="img">
-            <img [src]="img" />
-          </div>
-        </div>
-      </li>
-      }
-    </ul>
+    <app-fade-slider
+      [images]="images"
+      [currentSlideIndex]="currentSlide"
+      (slideChange)="onSlideChange($event)"
+    ></app-fade-slider>
   </div>
 </div>

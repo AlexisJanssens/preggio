@@ -1,0 +1,12 @@
+<div class="slider-container" [style.position]="fixed ? 'fixed' : 'relative'">
+  <div class="slider-inner">
+    @for(slide of images; track slide; let i = $index) {
+    <div
+      class="slide"
+      [class.active]="i === currentSlideIndex"
+      [@fadeAnimation]="i === currentSlideIndex ? 'visible' : 'hidden'"
+      [style.background-image]="'url(' + slide + ')'"
+    ></div>
+    }
+  </div>
+</div>
