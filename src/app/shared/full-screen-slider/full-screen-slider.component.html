@@ -1,0 +1,25 @@
+@if (isVisible) {
+<div class="fullscreen-overlay" @overlayAnimation>
+  <div class="fullscreen-controls">
+    <div class="close-btn" (click)="close()">
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </div>
+    <div class="nav-btn prev-btn" (click)="previousSlide()">
+      <fa-icon [icon]="faChevronLeft"></fa-icon>
+    </div>
+    <div class="nav-btn next-btn" (click)="nextSlide()">
+      <fa-icon [icon]="faChevronRight"></fa-icon>
+    </div>
+  </div>
+  <div class="fullscreen-slider">
+    @for(image of images; track image; let i = $index) {
+    <div
+      class="fullscreen-slide"
+      [class.active]="i === currentIndex"
+      [@fadeAnimation]="i === currentIndex ? 'visible' : 'hidden'"
+      [style.background-image]="'url(' + image + ')'"
+    ></div>
+    }
+  </div>
+</div>
+}

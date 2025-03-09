@@ -8,9 +8,11 @@
   </div>
   <div class="slider">
     <app-fade-slider
+      [contain]="contain"
       [images]="images"
       [currentSlideIndex]="currentSlide"
       (slideChange)="onSlideChange($event)"
+      (imageClick)="onImageClick($event)"
     ></app-fade-slider>
   </div>
 </div>

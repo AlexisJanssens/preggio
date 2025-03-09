@@ -1,3 +1,4 @@
+<app-full-screen-slider></app-full-screen-slider>
 <div class="container">
   <div class="top-layer"></div>
   <div class="flex-wrapper">
@@ -6,15 +7,25 @@
         [images]="inside"
         title="Intérieur"
         class="top-left"
+        (imageSelected)="onImageSelected($event)"
+        [contain]="true"
       ></app-slider>
       <app-slider
         title="Extérieur"
         [images]="outside"
         class="top-right"
+        (imageSelected)="onImageSelected($event)"
+        [contain]="true"
       ></app-slider>
     </div>
     <div class="mid">
-      <app-slider title="Plans" class="bottom-left"></app-slider>
+      <app-slider
+        title="Plans"
+        class="bottom-left"
+        [images]="map"
+        (imageSelected)="onImageSelected($event)"
+        [contain]="true"
+      ></app-slider>
       <div class="description">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. A fugiat
         cupiditate nemo laborum voluptate! Nemo eum quas ipsa provident ea sit.

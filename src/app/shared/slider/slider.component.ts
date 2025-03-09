@@ -1,6 +1,14 @@
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FadeSliderComponent } from '../fade-slider/fade-slider.component';
 
@@ -13,8 +21,13 @@ import { FadeSliderComponent } from '../fade-slider/fade-slider.component';
 export class SliderComponent {
   @ViewChild(FadeSliderComponent) fadeSlider!: FadeSliderComponent;
 
+  @Input() contain = false;
   @Input() images: string[] = [];
   @Input() title: string = 'Slider';
+  @Output() imageSelected = new EventEmitter<{
+    images: string[];
+    index: number;
+  }>();
 
   currentSlide = 0;
 
@@ -43,5 +56,9 @@ export class SliderComponent {
     }
 
     this.fadeSlider.isAutoplay = false;
+  }
+
+  onImageClick(index: number) {
+    this.imageSelected.emit({ images: this.images, index: index });
   }
 }

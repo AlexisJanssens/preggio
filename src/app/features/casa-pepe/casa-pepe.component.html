@@ -1,13 +1,28 @@
+<app-full-screen-slider></app-full-screen-slider>
 <div class="container">
   <div class="top-layer"></div>
   <div class="grid-wrapper">
     <app-slider
       title="Intérieur"
       class="top-left"
-      [images]="insideImgs"
+      [images]="inside"
+      (imageSelected)="onImageSelected($event)"
+      [contain]="true"
     ></app-slider>
-    <app-slider title="Extérieur" class="top-right"></app-slider>
-    <app-slider title="Plans" class="bottom-left"></app-slider>
+    <app-slider
+      title="Extérieur"
+      class="top-right"
+      [images]="outside"
+      (imageSelected)="onImageSelected($event)"
+      [contain]="true"
+    ></app-slider>
+    <app-slider
+      title="Plans"
+      class="bottom-left"
+      [images]="map"
+      (imageSelected)="onImageSelected($event)"
+      [contain]="true"
+    ></app-slider>
     <div class="description">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. A fugiat
       cupiditate nemo laborum voluptate! Nemo eum quas ipsa provident ea sit.

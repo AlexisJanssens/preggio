@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../../../assets/img/PROPRIETE/DRONE6456cad_1920.jpg");
+  background-image: url("../../../assets/img/ACCUEIL/ACCUEIL_SLIDE/13JARDIN_IMG_6325_1920x1080.jpg");
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
@@ -25,7 +25,6 @@
   display: grid;
   width: 100%;
   padding: 2rem 12%;
-
   gap: 4rem;
 }
 

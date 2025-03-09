@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../shared/card/card.component';
 import { SliderComponent } from '../../shared/slider/slider.component';
+import { FullScreenSliderComponent } from '../../shared/full-screen-slider/full-screen-slider.component';
 
 @Component({
   selector: 'app-casa-scuola',
   standalone: true,
-  imports: [CommonModule, SliderComponent],
+  imports: [CommonModule, SliderComponent, FullScreenSliderComponent],
   templateUrl: './casa-scuola.component.html',
   styleUrl: './casa-scuola.component.css',
 })
 export class CasaScuolaComponent {
+  @ViewChild(FullScreenSliderComponent)
+  fullScreenSlider!: FullScreenSliderComponent;
+
   inside = [
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/1SALON_IMG_3656_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/2SALON_IMG_3659_1200.jpg',
@@ -25,9 +29,9 @@ export class CasaScuolaComponent {
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/11CHAMBRE1_IMG_3740_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/12CHAMBRE2_IMG_4751_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/13CHAMBRE2_IMG_4663_1200.jpg',
-    'assets/img/SCUOLA/SCUOLA_INTERIEUR/14CHAMBRE2_IMG_4661_1200.jpg',
+    'assets/img/SCUOLA/SCUOLA_INTERIEUR/14CHAMBRE2_IMG_4664_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/15CHAMBRE2_IMG_4672_900.jpg',
-    'assets/img/SCUOLA/SCUOLA_INTERIEUR/16SDB_IMG_3652_1200.jpg',
+    'assets/img/SCUOLA/SCUOLA_INTERIEUR/16CHAMBRE2_IMG_4680_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/17CHAMBRE3_IMG_5042_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/18CHAMBRE3_IMG_5040_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/19CHAMBRE5_IMG_5040_1200.jpg',
@@ -51,7 +55,7 @@ export class CasaScuolaComponent {
     'assets/img/SCUOLA/SCUOLA_EXTERIEUR/8TERRASSE_IMG_5971_2_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_EXTERIEUR/9TERRASSE_IMG_9276_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_EXTERIEUR/10TERRASSE_IMG_5974_1200.jpg',
-    'assets/img/SCUOLA/SCUOLA_EXTERIEUR/10TERRASSE_IMG_5974_1200.jpg',
+    'assets/img/SCUOLA/SCUOLA_EXTERIEUR/11TERRASSE_IMG_3780_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_EXTERIEUR/12TERRASSE_IMG_3782_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_EXTERIEUR/13JARDIN_IMG_9286_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_EXTERIEUR/14JARDIN_IMG_9289_1200.jpg',
@@ -64,4 +68,15 @@ export class CasaScuolaComponent {
     'assets/img/SCUOLA/SCUOLA_EXTERIEUR/21EXT_IMG_4135_1200.jpg',
     'assets/img/SCUOLA/SCUOLA_EXTERIEUR/22EXT_IMG_4833_1200.jpg',
   ];
+
+  map = [
+    'assets/img/SCUOLA/SCUOLA_PLAN/1SCUOLA_PLAN_REZ_1200.jpg',
+    'assets/img/SCUOLA/SCUOLA_PLAN/2SCUOLA_PLAN_ETAGE1_1200.jpg',
+    'assets/img/SCUOLA/SCUOLA_PLAN/3SCUOLA_PLAN_ETAGE2_1200.jpg',
+  ];
+
+  onImageSelected(event: { images: string[]; index: number }) {
+    this.fullScreenSlider.open(event.images, event.index);
+    console.log('onImageSelected', event);
+  }
 }

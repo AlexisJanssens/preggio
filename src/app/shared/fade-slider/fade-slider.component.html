@@ -6,6 +6,8 @@
       [class.active]="i === currentSlideIndex"
       [@fadeAnimation]="i === currentSlideIndex ? 'visible' : 'hidden'"
       [style.background-image]="'url(' + slide + ')'"
+      [style.background-size]="contain ? 'contain' : 'cover'"
+      (click)="onImageClick(i)"
     ></div>
     }
   </div>

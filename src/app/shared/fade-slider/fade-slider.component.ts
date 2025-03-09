@@ -27,6 +27,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ],
 })
 export class FadeSliderComponent implements OnInit, OnDestroy {
+  @Input() contain = false;
   @Input() images: string[] = [];
   @Input() interval = 3000;
   @Input() showControls = true;
@@ -45,6 +46,7 @@ export class FadeSliderComponent implements OnInit, OnDestroy {
     }
   }
   @Output() slideChange = new EventEmitter<number>();
+  @Output() imageClick = new EventEmitter<number>();
 
   private _isAutoplay = true;
   private autoplayInterval: any;
@@ -77,5 +79,9 @@ export class FadeSliderComponent implements OnInit, OnDestroy {
     this.currentSlideIndex =
       (this.currentSlideIndex - 1 + this.images.length) % this.images.length;
     this.slideChange.emit(this.currentSlideIndex);
+  }
+
+  onImageClick(index: number): void {
+    this.imageClick.emit(index);
   }
 }
