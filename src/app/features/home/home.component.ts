@@ -20,8 +20,8 @@ import { FadeSliderComponent } from '../../shared/fade-slider/fade-slider.compon
 })
 export class HomeComponent {
   imagePaths = {
-    pepe: '/assets/img/CASAPEPPE/bg_CASAPEPPE_1920.jpg',
-    scuola: '/assets/img/SCUOLA/Casascuola_IMG_8298.jpg',
+    pepe: 'assets/img/CASAPEPPE/bg_CASAPEPPE_1920.jpg',
+    scuola: 'assets/img/SCUOLA/Casascuola_IMG_8298.jpg',
     situation: 'assets/img/SITUATION/IMG_1079cad.jpg',
   };
 
