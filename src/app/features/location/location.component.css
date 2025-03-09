@@ -1,9 +1,9 @@
 .p-one {
-  background-image: url("/assets/img/SITUATION/thumbnail_FOND_SITUATION_1920x1080.jpg");
+  background-image: url("../../../../public/assets/img/SITUATION/thumbnail_FOND_SITUATION_1920x1080.jpg");
 }
 
 .p-two {
-  background-image: url("/assets/img/SITUATION/CARTEregion_1920x1080.png");
+  background-image: url("../../../../public/assets/img/SITUATION/CARTEregion_1920x1080.png");
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,14 +25,14 @@
 .map {
   height: 400px;
   width: 332px;
-  background-image: url("/assets/img/SITUATION/thumbnail_ITALIE-simplifie_600.png");
+  background-image: url("../../../../public/assets/img/SITUATION/thumbnail_ITALIE-simplifie_600.png");
   background-size: cover;
 }
 
 .region {
   height: 400px;
   width: 30%;
-  background-image: url("/assets/img/SITUATION/ItalieCentre_900.png");
+  background-image: url("../../../../public/assets/img/SITUATION/ItalieCentre_900.png");
   background-size: cover;
   background-position: center center;
 }
