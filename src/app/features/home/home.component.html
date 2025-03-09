@@ -1,10 +1,8 @@
-<div #pageContainer id="parallax-wrapper">
-  <section>
-    <div class="p-one parallax-inner">
-      <app-fade-slider [images]="sliders" [fixed]="true"></app-fade-slider>
-    </div>
-  </section>
-  <section class="content">
+<div class="container">
+  <div class="top-layer">
+    <app-fade-slider [images]="sliders" [fixed]="true"></app-fade-slider>
+  </div>
+  <div class="flex-wrapper">
     <div class="texte">
       <p>Au cœur de l’Italie, à la frontière de l’Ombrie et de la Toscane,</p>
       <p>
@@ -35,51 +33,5 @@
         [imagePath]="imagePaths.scuola"
       ></app-card>
     </div>
-  </section>
-
-  <!-- <section class="buffer">
-    <div class="image-gauche">
-      <img src="/assets/img/ACCUEIL/drone_bg3.jpg" alt="" />
-    </div>
-    <div class="texte">
-      <p>
-        Au cœur de l’Italie, à la frontière de l’Ombrie et de la Toscane, au
-        milieu d’un environnement calme et superbe, à 3 km du village de
-        Preggio, « Le Vigne » est un ancien petit hameau restauré tout en
-        conservant son caractère authentique.
-      </p>
-      <p>
-        La piscine privée (6m x 13m), est très bien située avec vue sur les
-        collines verdoyantes d’Ombrie.
-      </p>
-      <p>Terrasse et jardin privatifs pour chaque maison.</p>
-    </div>
-    <div class="image-droite">
-      <img src="/assets/img/PROPRIETE/hamac_1920.jpg" alt="" />
-    </div>
-  </section>
-  <section>
-    <div class="p-two parallax-inner">
-      <div class="cards-container">
-        <app-card
-          title="casa pepe"
-          link="découvrir"
-          pathLink="/casa-peppe"
-          [imagePath]="imagePaths.pepe"
-        ></app-card>
-        <app-card
-          title="casa scuola"
-          link="découvrir"
-          pathLink="/casa-scuola"
-          [imagePath]="imagePaths.scuola"
-        ></app-card>
-        <app-card
-          title="situation"
-          link="découvrir"
-          pathLink="/situation"
-          [imagePath]="imagePaths.situation"
-        ></app-card>
-      </div>
-    </div>
-  </section> -->
+  </div>
 </div>

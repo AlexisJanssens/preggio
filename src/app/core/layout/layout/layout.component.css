@@ -9,6 +9,7 @@
   background-color: rgba(96, 120, 119, 1);
   margin: auto;
   position: relative;
+  overflow-y: auto;
 }
 
 .nav-container {

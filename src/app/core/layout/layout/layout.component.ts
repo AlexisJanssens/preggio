@@ -46,6 +46,7 @@ export class LayoutComponent implements AfterViewInit, OnDestroy {
 
   private onScroll(): void {
     const scrollPosition = this.pageContainer.nativeElement.scrollTop;
+    console.log(scrollPosition);
 
     if (scrollPosition > this.windowSize * 0.75) {
       this.navBarService.hideNavBar();

@@ -3,28 +3,22 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.background-top {
   background-image: url("../../../assets/img/PROPRIETE/PROPRIÉTÉS_IMG_7722.jpg");
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
-  height: calc(100vh - 440px);
+}
+
+.background-top {
+  height: 100vh;
   width: 100%;
 }
 
 .container-slide {
-  background-image: url("../../../assets/img/PROPRIETE/hamac1r_1920.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: 0 70%;
-}
-
-@media (min-width: 1920px) {
-  .container-slide {
-    background-position: 0 79%;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(96, 120, 119, 1);
 }
 
 .grid-wrapper {
@@ -33,10 +27,6 @@
   padding: 2rem 12%;
 
   gap: 4rem;
-}
-
-.white-layer {
-  background-color: rgb(96, 120, 119, 0.8);
 }
 
 .top-left {
