@@ -26,9 +26,9 @@ export class HomeComponent {
   };
 
   sliders = [
-    '../../../../public/assets/img/ACCUEIL/drone_bg1.jpg',
-    '../../../../public/assets/img/ACCUEIL/drone_bg2.jpg',
-    '../../../../public/assets/img/ACCUEIL/drone_bg3.jpg',
-    '../../../../public/assets/img/ACCUEIL/drone_bg4.jpg',
+    '/assets/img/ACCUEIL/drone_bg1.jpg',
+    '/assets/img/ACCUEIL/drone_bg2.jpg',
+    '/assets/img/ACCUEIL/drone_bg3.jpg',
+    '/assets/img/ACCUEIL/drone_bg4.jpg',
   ];
 }

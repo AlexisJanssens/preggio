@@ -6,7 +6,7 @@
 }
 
 .background-top {
-  background-image: url("../../../../public/assets/img/PROPRIETE/PROPRIÉTÉS_IMG_7722.jpg");
+  background-image: url("/assets/img/PROPRIETE/PROPRIÉTÉS_IMG_7722.jpg");
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
@@ -15,7 +15,7 @@
 }
 
 .container-slide {
-  background-image: url("../../../../public/assets/img/PROPRIETE/hamac1r_1920.jpg");
+  background-image: url("/assets/img/PROPRIETE/hamac1r_1920.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: 0 70%;
