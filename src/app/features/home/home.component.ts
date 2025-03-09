@@ -29,7 +29,6 @@ export class HomeComponent {
     'assets/img/ACCUEIL/ACCUEIL_SLIDE/1maisonspiscine_1718360272159R_1920x1080.jpg',
     'assets/img/ACCUEIL/ACCUEIL_SLIDE/2maisons4465_R_1920x1080.jpg',
     'assets/img/ACCUEIL/ACCUEIL_SLIDE/3maisons_IMG_7093_1920x1080.jpg',
-    'assets/img/ACCUEIL/ACCUEIL_SLIDE/3maisons_IMG_7093_1920x1080.jpg',
     'assets/img/ACCUEIL/ACCUEIL_SLIDE/4JARDIN_IMG_9228_1920x1080.jpg',
     'assets/img/ACCUEIL/ACCUEIL_SLIDE/5CASASCUOLA_IMG_9111_1920x1080.jpg',
     'assets/img/ACCUEIL/ACCUEIL_SLIDE/6VUE_IMG_0015_1920x1080.jpg',
