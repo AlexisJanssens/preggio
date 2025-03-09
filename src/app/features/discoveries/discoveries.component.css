@@ -1,9 +1,9 @@
 .p-one {
-  background-image: url("/assets/img/DECOUVERTES/decouvertes_bg.jpg");
+  background-image: url("../../../assets/img/DECOUVERTES/decouvertes_bg.jpg");
 }
 
 .p-two {
-  background-image: url("/assets/img/DECOUVERTES/decouvertes_bg.jpg");
+  background-image: url("../../../assets/img/DECOUVERTES/decouvertes_bg.jpg");
   display: flex;
   align-items: center;
   justify-content: center;
