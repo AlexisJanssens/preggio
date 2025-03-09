@@ -14,7 +14,7 @@ export class HomeComponent {
     scuola:
       'assets/img/ACCUEIL/VIGNETTESpageaccueil/VIGNETTE2-IMG_6993_SCUOLA_400.jpg',
     situation:
-      'assets/img/ACCUEIL/VIGNETTESpageaccueil/VIGNETTE3-IMG_1030_SITUATION_400.jpgg',
+      'assets/img/ACCUEIL/VIGNETTESpageaccueil/VIGNETTE3-IMG_1030_SITUATION_400.jpg',
   };
 
   slider = [
