@@ -12,6 +12,11 @@ import { DiscoveryDetailComponent } from './features/discoveries/discovery-detai
 
 export const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
     path: 'home',
     title: 'Home',
     component: HomeComponent,
