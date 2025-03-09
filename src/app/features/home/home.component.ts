@@ -1,14 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  inject,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
-import { NavBarService } from '../../shared/nav-bar.service';
-import { SliderComponent } from '../../shared/slider/slider.component';
+import { Component } from '@angular/core';
 import { CardComponent } from '../../shared/card/card.component';
 import { FadeSliderComponent } from '../../shared/fade-slider/fade-slider.component';
 
@@ -20,9 +10,11 @@ import { FadeSliderComponent } from '../../shared/fade-slider/fade-slider.compon
 })
 export class HomeComponent {
   imagePaths = {
-    pepe: 'assets/img/CASAPEPPE/bg_CASAPEPPE_1920.jpg',
-    scuola: 'assets/img/SCUOLA/Casascuola_IMG_8298.jpg',
-    situation: 'assets/img/SITUATION/IMG_1079cad.jpg',
+    pepe: 'assets/img/ACCUEIL/VIGNETTESpageaccueil/VIGNETTE1-IMG_6629 2R_PEPPE_400.jpg',
+    scuola:
+      'assets/img/ACCUEIL/VIGNETTESpageaccueil/VIGNETTE2-IMG_6993_SCUOLA_400.jpg',
+    situation:
+      'assets/img/ACCUEIL/VIGNETTESpageaccueil/VIGNETTE3-IMG_1030_SITUATION_400.jpgg',
   };
 
   slider = [

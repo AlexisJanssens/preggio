@@ -3,11 +3,15 @@
   <div class="flex-wrapper">
     <div class="top">
       <app-slider
-        [images]="sliders"
+        [images]="inside"
         title="Intérieur"
         class="top-left"
       ></app-slider>
-      <app-slider title="Extérieur" class="top-right"></app-slider>
+      <app-slider
+        title="Extérieur"
+        [images]="outside"
+        class="top-right"
+      ></app-slider>
     </div>
     <div class="mid">
       <app-slider title="Plans" class="bottom-left"></app-slider>
