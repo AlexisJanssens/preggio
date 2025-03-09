@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("assets/img/SCUOLA/bg_scuola_HD.jpg");
+  background-image: url("/assets/img/SCUOLA/bg_scuola_HD.jpg");
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;

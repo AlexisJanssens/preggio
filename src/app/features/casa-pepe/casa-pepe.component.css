@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("assets/img/CASAPEPPE/IMG_7366_PEPPE_1920.jpg");
+  background-image: url("/assets/img/CASAPEPPE/IMG_7366_PEPPE_1920.jpg");
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
