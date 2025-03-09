@@ -38,10 +38,6 @@ export class NavBarComponent {
       path: 'atmosphere',
     },
     {
-      title: 'Coups de coeur',
-      path: 'favourite',
-    },
-    {
       title: 'Contact',
       path: 'contact',
     },

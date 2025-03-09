@@ -65,12 +65,6 @@ export const routes: Routes = [
     children: [],
   },
   {
-    path: 'favourite',
-    title: 'Favourite',
-    component: FavouriteComponent,
-    children: [],
-  },
-  {
     path: 'contact',
     title: 'Contact',
     component: ContactComponent,
