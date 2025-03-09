@@ -13,7 +13,7 @@ import { DiscoveryDetailComponent } from './features/discoveries/discovery-detai
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
   {
