@@ -24,6 +24,7 @@ ul {
   height: 76px;
   & {
     a {
+      margin-top: 1px;
       color: white;
       font-size: 18px;
       text-transform: uppercase;
