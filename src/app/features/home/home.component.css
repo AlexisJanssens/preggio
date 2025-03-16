@@ -44,3 +44,42 @@
   justify-content: center;
   align-items: center;
 }
+
+.text-overlay {
+  position: absolute;
+  top: 80px;
+  left: 8px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  & .header {
+    margin: 0 auto;
+    width: 1020.63px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  & .fake-logo {
+    width: 196px;
+    height: 50px;
+  }
+
+  & h2 {
+    font-weight: 300;
+    width: 813px;
+  }
+  & .text {
+    width: 1020.63px;
+    font-size: 22px;
+    font-weight: 300;
+    margin: 1rem auto 0;
+  }
+  & h3 {
+    font-weight: 300;
+  }
+  & p {
+    font-weight: 300;
+  }
+}
