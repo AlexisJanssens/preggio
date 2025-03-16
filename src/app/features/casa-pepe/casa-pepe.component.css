@@ -120,12 +120,11 @@ h4 {
 }
 
 .tarif {
+  color: white;
   position: relative;
-  background-color: white;
   height: 236px;
   padding: 10px 8px 6px 10px;
   font-size: 18px;
-  border: solid 1px #cccccc;
   bottom: 3px;
   display: flex;
   flex-direction: column;
@@ -133,6 +132,7 @@ h4 {
   gap: 0.5rem;
   overflow-y: scroll;
   & h4 {
+    color: white;
     font-weight: 400;
   }
   & p {
