@@ -30,7 +30,7 @@ export class NavBarComponent {
       path: 'location',
     },
     {
-      title: 'Découvertes',
+      title: 'Expériences',
       path: 'discoveries',
     },
     {

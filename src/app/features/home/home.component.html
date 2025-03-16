@@ -1,7 +1,13 @@
 <div class="container">
   <div class="top-layer">
+    <app-nav-bar
+      id="nav-bar"
+      [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
+    ></app-nav-bar>
     <app-fade-slider [images]="slider" [fixed]="true"></app-fade-slider>
-    <div class="text-overlay">
+    <div
+      [className]="isNavBarVisible() ? 'text-overlay' : 'text-overlay hidden'"
+    >
       <div class="header">
         <div class="fake-logo"></div>
         <h2>

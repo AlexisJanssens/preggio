@@ -1,15 +1,16 @@
-<div class="card">
-  <div class="title">
-    <h3>{{ title }}</h3>
-  </div>
-  <div class="img">
-    <img [src]="imagePath" />
-  </div>
-  @if (noLink === false) {
-  <div class="link">
-    <a [routerLink]="pathLink">Découvrir</a>
-  </div>
-  } @else {
-  <div class="border-bottom"></div>
-  }
+<div class="title">
+  <h3>{{ title }}</h3>
 </div>
+<div class="img">
+  <img [src]="imagePath" />
+  <div class="text-hover">
+    <p>Découvrir</p>
+  </div>
+</div>
+@if (noLink === false) {
+<div class="link">
+  <a [routerLink]="pathLink">Découvrir</a>
+</div>
+} @else {
+<div class="border-bottom"></div>
+}

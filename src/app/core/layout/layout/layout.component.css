@@ -11,14 +11,3 @@
   position: relative;
   overflow-y: auto;
 }
-
-.nav-container {
-  transition: transform 0.3s ease-in-out;
-  height: 76px;
-  max-width: 100%;
-}
-
-.nav-container.hidden {
-  transition: all 0.3s ease-in-out;
-  transform: translateY(-200%);
-}

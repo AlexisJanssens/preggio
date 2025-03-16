@@ -1,14 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CardComponent } from '../../shared/card/card.component';
 import { FadeSliderComponent } from '../../shared/fade-slider/fade-slider.component';
+import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
+import { NavBarService } from '../../shared/nav-bar.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CardComponent, FadeSliderComponent],
+  imports: [
+    CardComponent,
+    FadeSliderComponent,
+    NavBarComponent,
+    NavBarComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  private navBarService = inject(NavBarService);
+
+  isNavBarVisible = this.navBarService.navBarState;
+
   imagePaths = {
     pepe: 'assets/img/ACCUEIL/VIGNETTESpageaccueil/VIGNETTE1-IMG_6629 2R_PEPPE_400.jpg',
     scuola:
