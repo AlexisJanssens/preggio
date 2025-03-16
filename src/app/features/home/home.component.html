@@ -2,6 +2,7 @@
   <div class="top-layer">
     <app-nav-bar
       id="nav-bar"
+      [currentPage]="'Accueil'"
       [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
     ></app-nav-bar>
     <app-fade-slider [images]="slider" [fixed]="true"></app-fade-slider>

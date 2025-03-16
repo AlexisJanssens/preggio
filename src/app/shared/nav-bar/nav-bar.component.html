@@ -5,7 +5,12 @@
     </div>
     @for (page of pages; track $index) {
     <li>
-      <a href="{{ page.path }}">{{ page.title }}</a>
+      <a
+        class="nav-link nav-link-ltr"
+        [class.active]="currentPage === page.title"
+        href="{{ page.path }}"
+        >{{ page.title }}</a
+      >
     </li>
     }
   </ul>

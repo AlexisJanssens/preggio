@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavBarPage } from './models';
 
 @Component({
@@ -8,6 +8,8 @@ import { NavBarPage } from './models';
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent {
+  @Input() currentPage: string = 'Accueil';
+
   public pages: NavBarPage[] = [
     {
       title: 'Accueil',

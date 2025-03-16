@@ -48,3 +48,40 @@ ul {
     color: white;
   }
 }
+
+.nav-link {
+  padding: 20px 0px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 1px;
+  content: "";
+  position: absolute;
+  background-color: white;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
+}
+
+.active {
+  opacity: 1;
+  text-shadow: 0 0 2px white;
+}
+
+.active::before {
+  width: 100%;
+}
