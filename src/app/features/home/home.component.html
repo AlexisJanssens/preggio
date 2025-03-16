@@ -5,7 +5,11 @@
       [currentPage]="'Accueil'"
       [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
     ></app-nav-bar>
-    <app-fade-slider [images]="slider" [fixed]="true"></app-fade-slider>
+    <app-fade-slider
+      [images]="slider"
+      [fixed]="true"
+      [isAutoplay]="true"
+    ></app-fade-slider>
     <div
       [className]="isNavBarVisible() ? 'text-overlay' : 'text-overlay hidden'"
     >
