@@ -1,16 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { SliderComponent } from '../../shared/slider/slider.component';
 import { FullScreenSliderComponent } from '../../shared/full-screen-slider/full-screen-slider.component';
+import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
+import { NavBarService } from '../../shared/nav-bar.service';
 
 @Component({
   selector: 'app-casa-pepe',
-  imports: [CommonModule, SliderComponent, FullScreenSliderComponent],
+  imports: [
+    CommonModule,
+    SliderComponent,
+    FullScreenSliderComponent,
+    NavBarComponent,
+  ],
   templateUrl: './casa-pepe.component.html',
   styleUrl: './casa-pepe.component.css',
 })
 export class CasaPepeComponent {
   @ViewChild(FullScreenSliderComponent)
+  private navBarService = inject(NavBarService);
+  isNavBarVisible = this.navBarService.navBarState;
+
   fullScreenSlider!: FullScreenSliderComponent;
 
   inside = [

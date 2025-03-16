@@ -1,70 +1,88 @@
 <app-full-screen-slider></app-full-screen-slider>
 <div class="container">
-  <div class="top-layer"></div>
+  <div class="top-layer">
+    <app-nav-bar
+      id="nav-bar"
+      [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
+    ></app-nav-bar>
+    <div class="background"></div>
+  </div>
   <div class="grid-wrapper">
     <app-slider
-      title="Intérieur"
+      title="CASA PEPPE | INTÉRIEUR"
       class="top-left"
       [images]="inside"
       (imageSelected)="onImageSelected($event)"
       [contain]="true"
     ></app-slider>
     <app-slider
-      title="Extérieur"
+      title="CASA PEPPE | EXTÉRIEUR"
       class="top-right"
       [images]="outside"
       (imageSelected)="onImageSelected($event)"
       [contain]="true"
     ></app-slider>
     <app-slider
-      title="Plans"
+      title="CASA PEPPE | PLANS"
       class="bottom-left"
       [images]="map"
       (imageSelected)="onImageSelected($event)"
+      [autoplay]="false"
       [contain]="true"
     ></app-slider>
-    <div class="description">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. A fugiat
-      cupiditate nemo laborum voluptate! Nemo eum quas ipsa provident ea sit.
-      Quam sapiente quasi non! Perferendis quos itaque totam sequi! Voluptas
-      architecto tempore, ipsum dignissimos, porro error accusantium magnam
-      optio doloribus voluptatum sapiente! Laborum fugiat consectetur possimus.
-      Doloremque laudantium ullam nihil molestiae similique ad beatae, qui in
-      mollitia, totam rerum. Officiis, illum natus repellat unde accusantium
-      architecto veritatis quo quibusdam, et in fuga minus quos voluptatibus
-      laudantium at officia incidunt neque? Ipsam corrupti saepe debitis neque
-      assumenda nobis, fugiat autem. Aut illo, vitae maiores dolorem nisi
-      molestiae ipsa et eum esse sit? Culpa animi voluptatem ea? Possimus
-      inventore, enim aut recusandae quo illo porro, culpa rem, non saepe quae
-      error. Incidunt itaque sunt quibusdam vel. Itaque, doloremque quos aut
-      quibusdam non impedit aliquid omnis quam, enim nostrum odit molestias eius
-      assumenda blanditiis praesentium, dolor adipisci debitis vero minima?
-      Mollitia, repudiandae. Voluptate ipsum qui similique. Ad sed reprehenderit
-      quibusdam optio quod doloribus adipisci at aliquam voluptas maxime,
-      accusantium fugit necessitatibus tenetur nulla soluta labore, explicabo,
-      dicta ipsa delectus hic praesentium laborum! Laborum cumque inventore
-      mollitia, voluptate itaque similique illo deleniti maxime corporis. Quidem
-      blanditiis sint, dolor, aliquid adipisci ea maiores accusantium nihil, cum
-      enim excepturi dolore eveniet suscipit possimus natus esse. Pariatur
-      incidunt delectus sed sit a iure quod aliquam inventore id dolore?
-      Dolorem, aspernatur voluptatum praesentium nam alias ipsa! Repudiandae
-      voluptate sint fugiat nam! Ab expedita earum praesentium a accusamus.
-      Ullam nobis dolorem optio libero aperiam cupiditate quas non amet corporis
-      sint? Cum, neque quia, modi eligendi sapiente officia quis facilis esse
-      iusto nesciunt, incidunt exercitationem voluptatibus illo. Eius, minus?
-      Consequuntur, impedit voluptas? Odit eligendi facere, at eveniet labore
-      nam, nobis excepturi dolore unde, aperiam laboriosam dolorum ipsum autem
-      voluptas debitis voluptatum accusantium magnam. Quisquam odit similique
-      fugit impedit blanditiis. Ullam deserunt quibusdam, distinctio, illum
-      officia ipsam obcaecati quam laborum saepe quae quos odio est, molestiae
-      laudantium magni libero non facilis! Pariatur, minus ipsam corrupti magni
-      enim culpa voluptatem nam. Doloribus aperiam voluptates eius molestiae
-      veniam deleniti repellat quidem? Ut omnis hic nulla dolore! Dicta ullam,
-      quam inventore a nemo at quibusdam aut aperiam, officia veniam repellat,
-      consectetur libero maxime!
+    <div class="description-container">
+      <h3>CASA PEPPE | DESCRIPTION</h3>
+      <div class="description">
+        <div class="header">
+          <h4>DESCRIPTION DE LA CASA PEPPE</h4>
+          <p>10 hôtes | 5 chambres | 3 salles de bain</p>
+        </div>
+        <div class="paragraphe">
+          <p>
+            Restaurée tout en conservant son caractère authentique, décorée avec
+            soin et équipée de tout le confort moderne.
+          </p>
+        </div>
+        <div class="paragraphe">
+          <h4>NIVEAU 1 :</h4>
+          <p>- hall d’entrée, vestiaire</p>
+          <p>- grande salle à manger</p>
+          <p>- cuisine super équipée</p>
+          <p>- 1 chambre lit double</p>
+          <p>- 1 salle d’eau, douche à l’italienne et wc</p>
+          <p>
+            - 2 terrasses avec coins repas et salon de jardin ombragé, four à
+            pizza
+          </p>
+        </div>
+        <div class="paragraphe">
+          <h4>NIVEAU 2 :</h4>
+          <p>- séjour avec feu ouvert</p>
+          <p>- 1 chambre lit double</p>
+          <p>- 1 chambre lit double + lavabo</p>
+          <p>- 1 chambre 2 lits simples + lavabo</p>
+          <p>- 1 bureau</p>
+          <p>- 1 salle d’eau, douche à l’italienne et wc</p>
+        </div>
+        <div class="paragraphe">
+          <h4>NIVEAU 3 :</h4>
+          <p>- 1 chambre 2 lits simples, 1 lit enfant à barreaux</p>
+          <p>- 1 salle d’eau, douche et wc</p>
+        </div>
+        <div class="transparent-gradient-layer"></div>
+      </div>
     </div>
   </div>
   <footer>
+    <div class="tarif">
+      <h4>TARIF DE LA CASA PEPPE (À LA SEMAINE)</h4>
+      <p>2380 € / haute saison 2025 : du 28 juin au 30 août</p>
+      <p>
+        2030 € / moyenne saison 2025 : du 3 mai au 28 juin et du 30 août au 27
+        septembre
+      </p>
+      <p>1820 € / le reste de l’année</p>
+    </div>
     <div class="calendar">
       <iframe
         src="https://www.availabilitycalendar.com/embed/YylTmB1SVvB7eCaTwAqI/fr-0-1-3-1-0-0-0-0-0-0-0-1-0/"

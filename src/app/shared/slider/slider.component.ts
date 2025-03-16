@@ -24,6 +24,7 @@ export class SliderComponent {
   @Input() contain = false;
   @Input() images: string[] = [];
   @Input() title: string = 'Slider';
+  @Input() autoplay = true;
   @Output() imageSelected = new EventEmitter<{
     images: string[];
     index: number;

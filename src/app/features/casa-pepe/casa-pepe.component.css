@@ -3,23 +3,31 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../../../assets/img/CASAPEPPE/IMG_7366_PEPPE_1920.jpg");
+  /* background-image: url("../../../assets/img/CASAPEPPE/IMG_7366_PEPPE_1920.jpg");
   background-position: top center;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: cover; */
+  /* background-attachment: fixed; */
 }
 
 .top-layer {
   height: 100vh;
   width: 100%;
+  position: sticky;
+  background-image: url("../../../assets/img/CASAPEPPE/IMG_7366_PEPPE_1920.jpg");
+  background-position: top center;
+  background-size: cover;
+  top: 0;
 }
 
 .grid-wrapper {
   display: grid;
   width: 100%;
+  min-height: 100%;
   padding: 2rem;
   background-color: rgba(196, 196, 196, 0.5);
+  backdrop-filter: blur(3px);
   gap: 4rem;
+  z-index: 10;
 }
 
 .top-left {
@@ -45,19 +53,6 @@
   justify-content: flex-end;
   align-items: center;
 }
-
-.description {
-  width: 454px;
-  height: 380px;
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  overflow-y: scroll;
-}
-
 footer {
   height: 300px;
   width: 100%;
@@ -65,8 +60,74 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  gap: 2rem;
+  z-index: 10;
 }
 
 .calendar {
   width: 726px;
+}
+
+.nav-container {
+  transition: transform 0.3s ease-in-out;
+  height: 76px;
+  max-width: 100%;
+}
+
+.nav-container.hidden {
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-200%);
+}
+
+.description {
+  margin: auto;
+  width: 400px;
+  height: 300px;
+  overflow-y: scroll;
+  border-radius: 3px;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.description-container {
+  position: relative;
+  width: 454px;
+  height: 380px;
+  background-color: rgba(255, 255, 255, 0.659);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5px 0px;
+  font-size: 25px;
+  color: rgb(42, 42, 42);
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: rgb(42, 42, 42);
+}
+.paragraphe {
+  margin-top: 1rem;
+  font-size: 18px;
+  color: rgb(42, 42, 42);
+}
+
+.tarif {
+  background-color: white;
+  padding: 1rem;
+  font-size: 18px;
+  & h4 {
+    font-weight: 400;
+  }
+  & p {
+    font-weight: 300;
+  }
 }

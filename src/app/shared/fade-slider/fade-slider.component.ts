@@ -26,7 +26,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ]),
   ],
 })
-export class FadeSliderComponent implements OnInit, OnDestroy {
+export class FadeSliderComponent implements OnDestroy {
   @Input() contain = false;
   @Input() images: string[] = [];
   @Input() interval = 3000;
@@ -53,9 +53,6 @@ export class FadeSliderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.stopAutoplay();
-  }
-  ngOnInit(): void {
-    this.startAutoplay();
   }
 
   startAutoplay(): void {
