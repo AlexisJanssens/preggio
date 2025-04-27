@@ -88,10 +88,6 @@ footer {
   position: relative;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 .description-container {
   position: relative;
   width: 454px;

@@ -3,15 +3,16 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../../../assets/img/SCUOLA/bg_scuola_HD.jpg");
-  background-position: top center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .top-layer {
+  position: sticky;
   height: 100vh;
   width: 100%;
+  background-image: url("../../../assets/img/SCUOLA/bg_scuola_HD.jpg");
+  background-position: top center;
+  background-size: cover;
+  top: 0;
 }
 
 .flex-wrapper {
@@ -20,8 +21,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(196, 196, 196, 0.5);
+  backdrop-filter: blur(3px);
   gap: 2rem;
-  background-color: rgba(96, 120, 119, 0.5);
 }
 
 .top {
@@ -40,52 +42,50 @@
   gap: 2rem;
 }
 
-/* .grid-wrapper {
-  display: grid;
-  width: 100%;
-  padding: 2rem;
-  gap: 4rem;
+.nav-container {
+  transition: transform 0.3s ease-in-out;
+  height: 76px;
+  max-width: 100%;
 }
 
-
-
-.top-left {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.nav-container.hidden {
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-200%);
 }
-
-.top-right {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.bottom-left {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-} */
-
-.description {
+.description-container {
+  position: relative;
   width: 454px;
   height: 380px;
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.659);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15);
+}
+
+.description {
+  margin: auto;
+  width: 400px;
+  height: 300px;
   overflow-y: scroll;
-  background-color: rgba(240, 248, 255, 0.721);
-  padding: 2rem;
+  border-radius: 3px;
+  position: relative;
+}
+
+h3 {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5px 0px;
+  font-size: 25px;
+  color: rgb(42, 42, 42);
+}
+
+h4 {
+  text-transform: uppercase;
   font-size: 18px;
+  color: rgb(42, 42, 42);
+}
+.paragraphe {
+  margin-top: 1rem;
+  font-size: 18px;
+  color: rgb(42, 42, 42);
 }
 
 footer {
@@ -95,6 +95,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+  z-index: 10;
 }
 .bot {
   width: 100%;
@@ -108,4 +110,25 @@ footer {
 
 .calendar {
   width: 726px;
+}
+
+.tarif {
+  color: white;
+  position: relative;
+  height: 236px;
+  padding: 10px 8px 6px 10px;
+  font-size: 18px;
+  bottom: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  overflow-y: scroll;
+  & h4 {
+    color: white;
+    font-weight: 400;
+  }
+  & p {
+    font-weight: 300;
+  }
 }

@@ -1,5 +1,12 @@
 <div class="container">
-  <div class="background-top"></div>
+  <div class="top-layer">
+    <app-nav-bar
+      id="nav-bar"
+      [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
+      currentPage="Property"
+    ></app-nav-bar>
+  </div>
+
   <div class="container-slide">
     <div class="grid-wrapper">
       <app-slider title="Intérieur" class="top-left"></app-slider>

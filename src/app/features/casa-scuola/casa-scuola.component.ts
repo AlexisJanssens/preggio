@@ -1,19 +1,27 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from '../../shared/card/card.component';
 import { SliderComponent } from '../../shared/slider/slider.component';
 import { FullScreenSliderComponent } from '../../shared/full-screen-slider/full-screen-slider.component';
+import { NavBarService } from '../../shared/nav-bar.service';
+import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-casa-scuola',
   standalone: true,
-  imports: [CommonModule, SliderComponent, FullScreenSliderComponent],
+  imports: [
+    CommonModule,
+    SliderComponent,
+    FullScreenSliderComponent,
+    NavBarComponent,
+  ],
   templateUrl: './casa-scuola.component.html',
   styleUrl: './casa-scuola.component.css',
 })
 export class CasaScuolaComponent {
+  private navBarService = inject(NavBarService);
   @ViewChild(FullScreenSliderComponent)
   fullScreenSlider!: FullScreenSliderComponent;
+  isNavBarVisible = this.navBarService.navBarState;
 
   inside = [
     'assets/img/SCUOLA/SCUOLA_INTERIEUR/1SALON_IMG_3656_1200.jpg',
