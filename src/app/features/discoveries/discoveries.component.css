@@ -9,6 +9,13 @@
   justify-content: center;
 }
 
+.top-layer {
+  height: 100vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
 .parallax-inner {
   position: relative;
   min-height: 100vh;
@@ -24,8 +31,9 @@
   z-index: 1;
   background-color: rgb(96, 120, 119, 1);
   padding: 2rem;
-  display: grid;
-  justify-content: space-between;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -43,7 +51,17 @@ img {
 }
 
 .texte {
-  font-size: 20px;
+  font-size: 18px;
+  max-width: 1028px;
+  margin: auto;
+  padding: 0 2rem;
+  & p {
+    font-weight: 200;
+    margin-top: 1rem;
+  }
+  & h3 {
+    font-weight: 200;
+  }
 }
 
 .grid-item {

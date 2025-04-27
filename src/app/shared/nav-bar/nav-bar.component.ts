@@ -36,7 +36,7 @@ export class NavBarComponent {
       path: 'discoveries',
     },
     {
-      title: 'Atmosphère',
+      title: 'Atmosphères',
       path: 'atmosphere',
     },
     {

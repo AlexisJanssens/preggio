@@ -1,12 +1,17 @@
 <div id="parallax-wrapper">
-  <section>
+  <section class="top-layer">
+    <app-nav-bar
+      id="nav-bar"
+      [currentPage]="'Situation'"
+      [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
+    ></app-nav-bar>
     <div class="p-one parallax-inner"></div>
   </section>
 
   <section class="buffer">
     <div class="map"></div>
     <div class="region"></div>
-    <div class="texte">
+    <!-- <div class="texte">
       <div class="header">
         <p>Preggio est situé entre Florence et Rome.</p>
         <p>Situation idéale pour visiter l’Ombrie et la Toscane.</p>
@@ -22,9 +27,13 @@
         <p>Spoleto ± 100 km | Orvieto ± 110 km | Firenze ± 140 km |</p>
         <p>Roma ± 200 km</p>
       </div>
-    </div>
+    </div> -->
   </section>
-  <section>
-    <div class="p-two parallax-inner"></div>
+  <section class="slide-show">
+    <app-fade-slider
+      [images]="slider"
+      [fixed]="true"
+      [isAutoplay]="true"
+    ></app-fade-slider>
   </section>
 </div>

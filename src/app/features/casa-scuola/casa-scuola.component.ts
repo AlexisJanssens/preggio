@@ -18,9 +18,9 @@ import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
   styleUrl: './casa-scuola.component.css',
 })
 export class CasaScuolaComponent {
-  private navBarService = inject(NavBarService);
   @ViewChild(FullScreenSliderComponent)
   fullScreenSlider!: FullScreenSliderComponent;
+  private navBarService = inject(NavBarService);
   isNavBarVisible = this.navBarService.navBarState;
 
   inside = [

@@ -1,5 +1,10 @@
 <div id="parallax-wrapper">
-  <section>
+  <section class="top-layer">
+    <app-nav-bar
+      id="nav-bar"
+      [currentPage]="'Expériences'"
+      [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
+    ></app-nav-bar>
     <div class="p-one parallax-inner"></div>
   </section>
 
@@ -22,7 +27,36 @@
         déposeront avec une infinie délicatesse sur des murs, des toiles et des
         panneaux de bois.
       </p>
-      <p>Tentez l’expérience !</p>
+      <p>
+        Tentez l’expérience ! Déambulez dans Perugia à la fin du jour, votre
+        regard glisse sur les siècles, les magasins offrent leurs tentations
+        entre les dernières traces du peuple étrusque, des escalators incongrus
+        vous transportent d’un siècle à l’autre dans la plus parfaite bonhomie.
+      </p>
+      <p>
+        Retenez votre souffle avant de pénétrer dans la basilique d’Assise, même
+        si le risque est grand d’être bousculé par un touriste absorbé par la
+        lecture de la grande bande dessinée de Pietro, vous y percevrez une
+        indicible paix.
+      </p>
+      <p>
+        Croisez les traces du loup lors d’une randonnée dans les monts
+        Sibillini, et si ce dernier vous fait encore peur, réfugiez-vous à
+        l’abri d’un de ses villages fortifiés où une auberge vous proposera un
+        menu digne d’un appétit de… loup.
+      </p>
+      <p>
+        Parcourez les collines au gré de votre humeur, du Trasimène à Orvieto,
+        de Gubbio à Spoleto, mille villages vous accueillent, mille découvertes
+        vous attendent, vous forçant à délaisser enfin votre appareil photo pour
+        ne plus contempler qu’avec vos yeux cette terre qui se dilue dans le
+        ciel avec un faste de nuances.
+      </p>
+      <p>
+        Trekkeurs en godillots, esthètes en escarpins, écolos en sandales,
+        gourmands en balade, copains en vadrouille, chacun trouvera sa place… et
+        un peu plus dans le cœur de l’Ombrie.
+      </p>
     </div>
   </section>
   <section>

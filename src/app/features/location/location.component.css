@@ -1,12 +1,28 @@
 .p-one {
-  background-image: url("../../../assets/img/SITUATION/thumbnail_FOND_SITUATION_1920x1080.jpg");
+  background-image: url("../../../assets/img/SITUATION/SITUATION_IMG_6344_1920.jpg");
+}
+
+.top-layer {
+  height: 100vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
 }
 
 .p-two {
-  background-image: url("../../../assets/img/SITUATION/CARTEregion_1920x1080.png");
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.white-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(196, 196, 196, 0.5);
 }
 .buffer {
   background-size: cover;
@@ -17,21 +33,21 @@
   padding: 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 4rem;
 }
 
 .map {
   height: 400px;
-  width: 332px;
+  min-width: 332px;
   background-image: url("../../../assets/img/SITUATION/thumbnail_ITALIE-simplifie_600.png");
   background-size: cover;
 }
 
 .region {
   height: 400px;
-  width: 30%;
+  min-width: 454px;
   background-image: url("../../../assets/img/SITUATION/ItalieCentre_900.png");
   background-size: cover;
   background-position: center center;
@@ -56,4 +72,12 @@
 
 .grid-item {
   display: flex;
+}
+
+.slide-show {
+  width: 100vw;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: rgb(96, 120, 119, 1);
 }
