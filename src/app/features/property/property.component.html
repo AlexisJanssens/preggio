@@ -1,27 +1,50 @@
+<app-full-screen-slider></app-full-screen-slider>
+
 <div class="container">
   <div class="top-layer">
     <app-nav-bar
       id="nav-bar"
       [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
-      currentPage="Property"
+      currentPage="La propriété"
     ></app-nav-bar>
   </div>
 
-  <div class="container-slide">
-    <div class="grid-wrapper">
-      <app-slider title="Intérieur" class="top-left"></app-slider>
-      <app-slider title="Extérieur" class="top-right"></app-slider>
-    </div>
+  <div class="grid-wrapper">
+    <app-slider
+      title="La Piscine"
+      class="top-left"
+      [images]="swimmingPool"
+      [contain]="true"
+      (imageSelected)="onImageSelected($event)"
+    ></app-slider>
+    <app-slider
+      title="Les Jardins"
+      class="top-right"
+      [images]="gardens"
+      [contain]="true"
+      (imageSelected)="onImageSelected($event)"
+    ></app-slider>
     <div class="text-banner">
-      Accaborrora nemoluptam rem vel maiossuntur, conecuscium sit qui ut ullatum
-      simin re consequ iscientiame lam a volorib earcide bisitatur? Atibus modit
-      aut ipsam id ut enihicia quistiam senimag nimpor aspernaturia ventionserum
-      veneseque min earunti doloribus, estisimin nonsequid magnissunt autate la
-      sum, sit, omnis sus eos ent landitis as doluptur aut omni dis dolupta
-      comnis aditae quam volliquiam asperro volupic illaborio verunt deles idel
-      minti qui blam, nat. Ibusa aut re, qui culparu ptatus eicipsum voluptae
-      voluptas expero omnis simil iliquia derio. moluptatis facia cus cuscia
-      dolum evelitium aspe si vent pel illo ex et
+      <p>
+        Havre de paix au milieu d’un environnement superbe et ressourçant, la
+        Casa Peppe et la Casa Scuola,
+      </p>
+      <p>
+        accessibles par une «&nbsp;strada&nbsp;bianca&nbsp;» , se nichent à 3 km
+        du village de Preggio.
+      </p>
+      <p>
+        Jardins dans un parc arboré de 3 hectares à 400 m d’altitude avec vue
+        panoramique sur les collines verdoyantes d’Ombrie.
+      </p>
+      <p>
+        La piscine (6m x 13m, électrolyse au sel) est ouverte de juin à
+        septembre, elle est commune aux deux maisons.
+      </p>
+      <p>
+        Lieu idéal et propice à la détente pour des vacances en famille ou entre
+        amis !
+      </p>
     </div>
   </div>
 </div>

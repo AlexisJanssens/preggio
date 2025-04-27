@@ -18,10 +18,10 @@ import { NavBarService } from '../../shared/nav-bar.service';
 })
 export class CasaPepeComponent {
   @ViewChild(FullScreenSliderComponent)
+  fullScreenSlider!: FullScreenSliderComponent;
+
   private navBarService = inject(NavBarService);
   isNavBarVisible = this.navBarService.navBarState;
-
-  fullScreenSlider!: FullScreenSliderComponent;
 
   inside = [
     'assets/img/CASAPEPPE/PEPPE_INTERIEUR/1PEPPE_salon-20220624_144449_1200.jpg',
