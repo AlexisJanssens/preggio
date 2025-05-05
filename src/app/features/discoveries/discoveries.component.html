@@ -68,6 +68,7 @@
           <app-card
             title="{{ card.title }}"
             imagePath="{{ card.imgPath }}"
+            [link]="card.link"
             [pathLink]="'/discoveries/' + card.link"
           ></app-card>
         </div>

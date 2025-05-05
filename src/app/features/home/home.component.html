@@ -10,23 +10,27 @@
       [fixed]="true"
       [isAutoplay]="true"
     ></app-fade-slider>
-    <div
-      [className]="isNavBarVisible() ? 'text-overlay' : 'text-overlay hidden'"
-    >
-      <div class="header">
-        <div class="fake-logo"></div>
-        <h2>
-          DEUX MAISONS DE CHARME DANS UN ENVIRONNEMENT EXCEPTIONNEL À LA
-          FRONTIERE
-          <span>TOSCANE-OMBRIE</span>
-        </h2>
-      </div>
-      <div class="text">
-        <h3>DÉSIR D’ITALIE ?</h3>
-        <p>Antipasti o primi ? arte o passeggiata ?</p>
-        <p>vino o caffè ? Siena o Perugia ?</p>
-        <p>Découvrez l’accueil de l’Ombrie</p>
-        <p>aux marges des plus belles villes d’Italie !</p>
+    <div class="overlay-container">
+      <div
+        [className]="isNavBarVisible() ? 'text-overlay' : 'text-overlay hidden'"
+      >
+        <div class="header">
+          <h2>
+            DEUX MAISONS DE CHARME DANS UN ENVIRONNEMENT EXCEPTIONNEL À LA
+            FRONTIERE
+            <span>TOSCANE-OMBRIE</span>
+          </h2>
+        </div>
+        <div class="text">
+          <p>
+            DÉSIR D’ITALIE ? Antipasti o primi ? arte o passeggiata ? vino o
+            caffè ? Assisi o Perugia ?
+          </p>
+          <p>
+            Découvrez l’accueil de l’Ombrie aux marges des plus belles villes
+            d’Italie !
+          </p>
+        </div>
       </div>
     </div>
   </div>

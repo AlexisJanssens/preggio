@@ -1,1 +1,51 @@
-<p>contact works!</p>
+<div class="page-container">
+  <app-nav-bar
+    id="nav-bar"
+    [currentPage]="'Contact'"
+    [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
+  ></app-nav-bar>
+  <div class="contact-container">
+    <div class="description">
+      <p>
+        N’hésitez pas à nous contacter pour toute information complémentaire,
+      </p>
+      <p>nous serons très heureux de vous répondre.</p>
+    </div>
+    <div class="cards-container">
+      <app-card
+        title="casa peppe"
+        link="contacter"
+        [imagePath]="imagePaths.pepe"
+        [titleColor]="'#607877'"
+        (onCardClick)="changeCurrentContact($event)"
+      ></app-card>
+      <app-card
+        title="casa scuola"
+        link="contacter"
+        [imagePath]="imagePaths.scuola"
+        [titleColor]="'#607877'"
+        (onCardClick)="changeCurrentContact($event)"
+      ></app-card>
+    </div>
+    @if (currentContact === 'casa peppe') {
+    <div class="contact-details peppe">
+      <h2>Contacter la CASA PEPPE</h2>
+      <p>Sabine & Jean-Luc Timmermans</p>
+      <p>
+        <a href="mailto:sabine.cogels@gmail.com"> par mail</a>
+      </p>
+      <p>ou par téléphone : +32 478 67 00 50</p>
+    </div>
+    } @if (currentContact === 'casa scuola') {
+
+    <div class="contact-details scuola">
+      <h2>Contacter la CASA SCUOLA</h2>
+      <p>Martine et Olivier Janssens de Bisthoven</p>
+      <p>
+        <a href="mailto:lascuola-levigne@skynet.be">par mail</a>
+      </p>
+      <p>ou par téléphone : +32 498 33 18 72</p>
+    </div>
+    }
+  </div>
+</div>

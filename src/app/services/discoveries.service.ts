@@ -19,10 +19,22 @@ export class DiscoveriesService {
     },
     {
       title: 'Monte Tezio',
+      textTitle: 'SUR LE MONT CHAUVE',
       imgPath: 'assets/img/PROPRIETE/hamac_1920.jpg',
       link: '/monte-tezio',
-      content:
-        'Monte Tezio is a mountain in the Apennines, located in the Umbria region of Italy. It is known for its beautiful views and hiking trails.',
+      paragraphs: [
+        'Sur la route de crête entre Preggio et Castel Rigone, vous pouvez admiré l’immense paysage qui s’ouvre vers la chaîne des Appenins. ',
+        'Au premier plan vous apercevez le Monte Tezzio à l’allure de gros bison endormi. Chaussez vos bottines, partez tôt en été, dans le sac : eau, saucisson, pecorino, pane et gressini. Les plus valeureux monteront avec une bouteille de grechetto. ',
+        'L’ascension par le petit chemin qui démarre à gauche de la maison forestière est charmant. Le paysage s’ouvre lentement et on accède au sommet décoiffé et décoiffant (les jours de vent) en maudissant les quelques excès de table auxquels vous vous êtes peut-être livrés ces derniers jours. ',
+        'À chaque saison, on trouve un coin sympa, le grechetto achèvera de rendre cette journée mémorable. Tant pis si vous l’avez laissé dans le frigo à Preggio, il fera alors l’affaire au bord de la piscine.',
+      ],
+      imgs: [
+        'assets/img/DECOUVERTES/MONTE-TEZIO/MonteTezio_IMG_1171_1200.jpg',
+        'assets/img/DECOUVERTES/MONTE-TEZIO/MonteTezio_IMG_1223_1200.jpg',
+        'assets/img/DECOUVERTES/MONTE-TEZIO/MonteTezio_IMG_1230_1200.jpg',
+        'assets/img/DECOUVERTES/MONTE-TEZIO/MonteTezio_IMG_1236_1200.jpg',
+        'assets/img/DECOUVERTES/MONTE-TEZIO/MonteTezio_IMG_1274_1200.jpg',
+      ],
     },
     {
       title: 'Fra Angelico',

@@ -1,15 +1,31 @@
 <div class="container">
-  <div class="content">
-    @if (discovery) {
-    <div class="text">
+  <app-nav-bar
+    id="nav-bar"
+    [currentPage]="'Expériences'"
+    [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
+  ></app-nav-bar>
+  @if(discovery.bannerImg) {
+  <div class="banner">
+    <img class="banner-image" [src]="discovery.bannerImg" alt="Banner Image" />
+    <div class="title">
       <h1>{{ discovery.title }}</h1>
-      <p>{{ discovery.content }}</p>
     </div>
-    } @else {
-    <div class="header">
-      <h1>Erreur</h1>
-      <p>La découverte n'a pas été trouvée.</p>
+  </div>
+  }
+
+  <div class="discovery-container">
+    <div class="images">
+      @for (img of discovery.imgs; track $index) {
+      <div class="discovery-img">
+        <img [src]="img" alt="Discovery Image" />
+      </div>
+      }
     </div>
-    }
+    <div class="texte">
+      <h3>{{ discovery.textTitle }}</h3>
+      @for (paragraph of discovery.paragraphs; track $index) {
+      <p>{{ paragraph }}</p>
+      }
+    </div>
   </div>
 </div>
