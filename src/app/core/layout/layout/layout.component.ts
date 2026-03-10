@@ -8,9 +8,10 @@ import {
   OnDestroy,
   ViewChild,
 } from '@angular/core';
-import { NavBarComponent } from '../../../shared/nav-bar/nav-bar.component';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout',
@@ -24,6 +25,8 @@ export class LayoutComponent implements AfterViewInit, OnDestroy {
 
   private scrollListener: any;
   private navBarService = inject(NavBarService);
+  private router = inject(Router);
+  private routerSub!: Subscription;
 
   private windowSize: number = window.innerHeight;
 
@@ -35,6 +38,12 @@ export class LayoutComponent implements AfterViewInit, OnDestroy {
       'scroll',
       this.scrollListener
     );
+
+    this.routerSub = this.router.events
+      .pipe(filter((e) => e instanceof NavigationEnd))
+      .subscribe(() => {
+        this.pageContainer.nativeElement.scrollTop = 0;
+      });
   }
 
   ngOnDestroy(): void {
@@ -42,6 +51,7 @@ export class LayoutComponent implements AfterViewInit, OnDestroy {
       'scroll',
       this.scrollListener
     );
+    this.routerSub?.unsubscribe();
   }
 
   private onScroll(): void {
