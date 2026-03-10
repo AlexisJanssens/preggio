@@ -32,6 +32,9 @@
   font-size: 22px;
   color: white;
   padding: 2rem;
+  animation: fade-slide-up linear both;
+  animation-timeline: view();
+  animation-range: entry 5% entry 55%;
 
   & p {
     font-weight: 300;
@@ -41,6 +44,9 @@
 .reviews-section {
   width: 100%;
   padding: 1rem 0 2rem;
+  animation: fade-slide-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 50%;
 }
 
 .cards {
@@ -49,6 +55,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fade-slide-up linear both;
+  animation-timeline: view();
+  animation-range: entry 5% entry 60%;
 }
 .overlay-container {
   position: absolute;
@@ -60,6 +69,16 @@
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 4rem;
+  animation: overlay-parallax linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0vh 80vh;
+}
+
+@keyframes overlay-parallax {
+  to {
+    transform: translateY(-15vh);
+    opacity: 0;
+  }
 }
 
 .text-overlay {
@@ -141,4 +160,15 @@
 @keyframes bounce {
   0%, 100% { translate: 0 0; }
   50%       { translate: 0 8px; }
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
