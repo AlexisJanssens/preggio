@@ -69,6 +69,13 @@ export class CasaPepeComponent {
     'assets/img/CASAPEPPE/PEPPE_PLAN/3PEPPE_PLAN_ETAGE2_1200.jpg',
   ];
 
+  isAtBottom = false;
+
+  onDescriptionScroll(event: Event) {
+    const el = event.target as HTMLElement;
+    this.isAtBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 5;
+  }
+
   onImageSelected(event: { images: string[]; index: number }) {
     this.fullScreenSlider.open(event.images, event.index);
     console.log('onImageSelected', event);

@@ -6,6 +6,11 @@
       [className]="isNavBarVisible() ? 'nav-container' : 'nav-container hidden'"
       currentPage="Casa Scuola"
     ></app-nav-bar>
+    <div [className]="isNavBarVisible() ? 'scroll-hint' : 'scroll-hint hidden'">
+      <span class="scroll-arrow"></span>
+      <span class="scroll-arrow"></span>
+      <span class="scroll-arrow"></span>
+    </div>
   </div>
   <div class="flex-wrapper">
     <div class="top">
@@ -33,9 +38,9 @@
         [contain]="true"
         [autoplay]="false"
       ></app-slider>
-      <div class="description-container">
+      <div class="description-container" [class.at-bottom]="isAtBottom">
         <h3>CASA SCUOLA | DESCRIPTION</h3>
-        <div class="description">
+        <div class="description" (scroll)="onDescriptionScroll($event)">
           <div class="header">
             <h4>DESCRIPTION DE LA CASA SCUOLA</h4>
             <p>10 hôtes | 5 chambres | 2 salles de bain</p>
