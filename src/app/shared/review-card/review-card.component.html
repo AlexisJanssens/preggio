@@ -1,0 +1,20 @@
+<div class="review-card">
+  <div class="card-header">
+    @if (picture) {
+      <img class="author-picture" [src]="picture" [alt]="authorFirstName + ' ' + authorLastName" />
+    } @else {
+      <div class="author-initials">{{ initials }}</div>
+    }
+    <div class="author-info">
+      <span class="author-name">{{ authorFirstName }} {{ authorLastName }}</span>
+      <div class="stars">
+        @for (filled of stars; track $index) {
+          <fa-icon [icon]="faStar" [class]="filled ? 'star filled' : 'star empty'"></fa-icon>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p class="description">{{ description }}</p>
+  </div>
+</div>

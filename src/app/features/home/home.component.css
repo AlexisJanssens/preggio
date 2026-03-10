@@ -38,6 +38,11 @@
   }
 }
 
+.reviews-section {
+  width: 100%;
+  padding: 1rem 0 2rem;
+}
+
 .cards {
   width: 100%;
   gap: 2rem;

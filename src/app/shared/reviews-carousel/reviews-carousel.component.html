@@ -1,0 +1,29 @@
+<div class="carousel-wrapper">
+  <h2 class="carousel-title">{{ title }}</h2>
+  <div class="carousel-controls">
+    <button class="nav-btn" (click)="prev()" [disabled]="currentPage() === 0" aria-label="Previous">
+      <fa-icon [icon]="faChevronLeft"></fa-icon>
+    </button>
+    <div class="carousel-viewport">
+      <div class="carousel-track" [style.transform]="translateX">
+        @for (review of reviews; track $index) {
+          <app-review-card
+            [description]="review.description"
+            [authorFirstName]="review.authorFirstName"
+            [authorLastName]="review.authorLastName"
+            [picture]="review.picture"
+            [rating]="review.rating"
+          ></app-review-card>
+        }
+      </div>
+    </div>
+    <button class="nav-btn" (click)="next()" [disabled]="currentPage() >= pageCount - 1" aria-label="Next">
+      <fa-icon [icon]="faChevronRight"></fa-icon>
+    </button>
+  </div>
+  <div class="dots">
+    @for (page of pages; track $index) {
+      <span class="dot" [class.active]="currentPage() === $index" (click)="goTo($index)"></span>
+    }
+  </div>
+</div>
