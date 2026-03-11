@@ -62,8 +62,7 @@
   <section>
     <div class="p-two parallax-inner">
       <div class="cards-container-grid">
-        @for(card of discoveriesList; track card) {
-
+        @for(card of discoveriesList(); track card.id) {
         <div class="grid-item">
           <app-card
             title="{{ card.title }}"

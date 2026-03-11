@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { CardComponent } from '../../shared/card/card.component';
 import { DiscoveriesService } from '../../services/discoveries.service';
 import { NavBarService } from '../../shared/nav-bar.service';
@@ -11,9 +12,9 @@ import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
   styleUrl: './discoveries.component.css',
 })
 export class DiscoveriesComponent {
-  discoveries = inject(DiscoveriesService);
-  discoveriesList = this.discoveries.getDiscoveries();
-
+  private discoveriesService = inject(DiscoveriesService);
   private navBarService = inject(NavBarService);
+
+  discoveriesList = toSignal(this.discoveriesService.getDiscoveries(), { initialValue: [] });
   isNavBarVisible = this.navBarService.navBarState;
 }

@@ -1,9 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DiscoveriesComponent } from '../discoveries.component';
+import { switchMap } from 'rxjs/operators';
 import { DiscoveriesService } from '../../../services/discoveries.service';
 import { NavBarComponent } from '../../../shared/nav-bar/nav-bar.component';
 import { NavBarService } from '../../../shared/nav-bar.service';
+import { Discovery } from '../../../models/discovery.model';
 
 @Component({
   selector: 'app-discovery-detail',
@@ -13,15 +14,19 @@ import { NavBarService } from '../../../shared/nav-bar.service';
 })
 export class DiscoveryDetailComponent implements OnInit {
   private route = inject(ActivatedRoute);
-  private discoveries = inject(DiscoveriesService);
+  private discoveriesService = inject(DiscoveriesService);
   private navBarService = inject(NavBarService);
 
   isNavBarVisible = this.navBarService.navBarState;
-
-  discovery: any;
+  discovery = signal<Discovery | undefined>(undefined);
 
   ngOnInit(): void {
-    const discoveryLink = this.route.snapshot.paramMap.get('link');
-    this.discovery = this.discoveries.getDiscoveryByLink(discoveryLink ?? '');
+    this.route.paramMap
+      .pipe(
+        switchMap((params) =>
+          this.discoveriesService.getDiscoveryByLink(params.get('link') ?? '')
+        )
+      )
+      .subscribe((d) => this.discovery.set(d));
   }
 }

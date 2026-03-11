@@ -1,0 +1,109 @@
+<div class="edit-page">
+  <header>
+    <a routerLink="/admin/discoveries" class="back">← Retour</a>
+    <h1>{{ id === 'new' ? 'Nouvelle découverte' : 'Éditer la découverte' }}</h1>
+  </header>
+
+  <form (ngSubmit)="save()">
+    <div class="section">
+      <h2>Infos générales</h2>
+      <div class="row">
+        <div class="field">
+          <label>Titre</label>
+          <input type="text" [(ngModel)]="form.title" name="title" required />
+        </div>
+        <div class="field">
+          <label>Slug (URL)</label>
+          <input type="text" [(ngModel)]="form.link" name="link" placeholder="ex: umbria-jazz" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Titre alternatif <small>(optionnel)</small></label>
+          <input type="text" [(ngModel)]="form.textTitle" name="textTitle" />
+        </div>
+        <div class="field">
+          <label>Ordre d'affichage</label>
+          <input type="number" [(ngModel)]="form.order" name="order" />
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Image de vignette</h2>
+      <div class="thumb-row">
+        @if (form.imgPath) {
+          <img [src]="form.imgPath" alt="vignette" class="preview" />
+        }
+        <div class="upload-area">
+          <div class="field">
+            <label>URL de l'image</label>
+            <input type="text" [(ngModel)]="form.imgPath" name="imgPath" placeholder="assets/img/... ou https://..." />
+          </div>
+          <div class="field">
+            <label>Ou uploader un fichier</label>
+            <input type="file" accept="image/*" (change)="onThumbUpload($event)" [disabled]="uploadingThumb()" />
+            @if (uploadingThumb()) {
+              <progress [value]="thumbUploadProgress()" max="100"></progress>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Contenu <small>(texte court, alternatif aux paragraphes)</small></h2>
+      <textarea [(ngModel)]="form.content" name="content" rows="3"></textarea>
+    </div>
+
+    <div class="section">
+      <h2>Paragraphes</h2>
+      @for (p of form.paragraphs; track trackByIndex($index)) {
+        <div class="list-item">
+          <textarea
+            [value]="p"
+            (input)="updateParagraph($index, $any($event.target).value)"
+            rows="3"
+          ></textarea>
+          <button type="button" class="btn-icon" (click)="removeParagraph($index)" title="Supprimer">✕</button>
+        </div>
+      }
+      <button type="button" class="btn btn-outline" (click)="addParagraph()">+ Ajouter un paragraphe</button>
+    </div>
+
+    <div class="section">
+      <h2>Galerie d'images</h2>
+      <div class="gallery-grid">
+        @for (img of form.imgs; track trackByIndex($index)) {
+          <div class="gallery-item">
+            <img [src]="img" alt="" class="gallery-thumb" />
+            <input
+              type="text"
+              [value]="img"
+              (change)="updateImg($index, $any($event.target).value)"
+              placeholder="URL de l'image"
+            />
+            <button type="button" class="btn-icon" (click)="removeImg($index)" title="Supprimer">✕</button>
+          </div>
+        }
+      </div>
+      <div class="gallery-actions">
+        <button type="button" class="btn btn-outline" (click)="addImg()">+ Ajouter une URL</button>
+        <label class="btn btn-outline">
+          Uploader des photos
+          <input type="file" accept="image/*" multiple (change)="onGalleryUpload($event)" [disabled]="uploadingGallery()" style="display:none" />
+        </label>
+      </div>
+      @if (uploadingGallery()) {
+        <progress [value]="galleryUploadProgress()" max="100"></progress>
+      }
+    </div>
+
+    <div class="form-footer">
+      <a routerLink="/admin/discoveries" class="btn btn-outline">Annuler</a>
+      <button type="submit" class="btn btn-primary" [disabled]="saving()">
+        {{ saving() ? 'Enregistrement...' : 'Enregistrer' }}
+      </button>
+    </div>
+  </form>
+</div>
