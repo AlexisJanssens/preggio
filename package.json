@@ -21,7 +21,7 @@
     "@angular/router": "^19.1.0",
     "@fortawesome/angular-fontawesome": "^1.0.0",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "firebase": "^12.10.0",
+    "firebase": "^11.8.0",
     "rfx-parallax": "^3.3.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
