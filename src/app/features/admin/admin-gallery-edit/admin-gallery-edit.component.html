@@ -1,0 +1,82 @@
+<div class="edit-page">
+  <header>
+    <a routerLink="/admin/galleries" class="back">← Retour</a>
+    <h1>{{ gallery()?.label ?? galleryId }}</h1>
+    <p class="gallery-id">{{ galleryId }}</p>
+  </header>
+
+  @if (isNamedGallery) {
+    <div class="section">
+      <h2>Images nommées</h2>
+      @for (key of namedKeys; track key) {
+        <div class="named-item">
+          <span class="named-key">{{ key }}</span>
+          <div class="named-preview">
+            @if (namedImages()[key]) {
+              <img [src]="namedImages()[key]" [alt]="key" class="preview" />
+            } @else {
+              <div class="no-img">Aucune image</div>
+            }
+          </div>
+          <div class="named-actions">
+            <label class="btn btn-outline btn-sm">
+              Uploader
+              <input
+                type="file"
+                accept="image/*"
+                (change)="onNamedUpload($event, key)"
+                [disabled]="uploading()"
+                style="display:none"
+              />
+            </label>
+            @if (namedImages()[key]) {
+              <button type="button" class="btn btn-sm btn-danger" (click)="removeNamedImage(key)">Supprimer</button>
+            }
+          </div>
+        </div>
+      }
+      @if (uploading()) {
+        <progress [value]="uploadProgress()" max="100"></progress>
+      }
+    </div>
+  } @else {
+    <div class="section">
+      <h2>Images ({{ images().length }})</h2>
+      <div class="gallery-grid">
+        @for (img of images(); track trackByIndex($index)) {
+          <div class="gallery-item">
+            <img [src]="img" alt="" class="gallery-thumb" />
+            <div class="item-actions">
+              <button type="button" class="btn-icon" (click)="moveUp($index)" title="Monter" [disabled]="$index === 0">↑</button>
+              <button type="button" class="btn-icon" (click)="moveDown($index)" title="Descendre" [disabled]="$index === images().length - 1">↓</button>
+              <button type="button" class="btn-icon btn-danger-icon" (click)="removeImage($index)" title="Supprimer">✕</button>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="upload-row">
+        <label class="btn btn-outline">
+          Uploader des photos
+          <input
+            type="file"
+            accept="image/*"
+            multiple
+            (change)="onUpload($event)"
+            [disabled]="uploading()"
+            style="display:none"
+          />
+        </label>
+      </div>
+      @if (uploading()) {
+        <progress [value]="uploadProgress()" max="100"></progress>
+      }
+    </div>
+  }
+
+  <div class="form-footer">
+    <a routerLink="/admin/galleries" class="btn btn-outline">Annuler</a>
+    <button type="button" class="btn btn-primary" (click)="save()" [disabled]="saving()">
+      {{ saving() ? 'Enregistrement...' : 'Enregistrer' }}
+    </button>
+  </div>
+</div>

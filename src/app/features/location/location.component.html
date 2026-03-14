@@ -36,10 +36,12 @@
     </div> -->
   </section>
   <section class="slide-show">
-    <app-fade-slider
-      [images]="slider"
-      [fixed]="true"
-      [isAutoplay]="true"
-    ></app-fade-slider>
+    @if (slider().length > 0) {
+      <app-fade-slider
+        [images]="slider()"
+        [fixed]="true"
+        [isAutoplay]="true"
+      ></app-fade-slider>
+    }
   </section>
 </div>

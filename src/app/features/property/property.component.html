@@ -13,14 +13,14 @@
     <app-slider
       title="La Piscine"
       class="top-left"
-      [images]="swimmingPool"
+      [images]="swimmingPool()"
       [contain]="true"
       (imageSelected)="onImageSelected($event)"
     ></app-slider>
     <app-slider
       title="Les Jardins"
       class="top-right"
-      [images]="gardens"
+      [images]="gardens()"
       [contain]="true"
       (imageSelected)="onImageSelected($event)"
     ></app-slider>

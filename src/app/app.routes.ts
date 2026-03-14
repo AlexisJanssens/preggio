@@ -12,6 +12,8 @@ import { DiscoveryDetailComponent } from './features/discoveries/discovery-detai
 import { AdminLoginComponent } from './features/admin/admin-login/admin-login.component';
 import { AdminDiscoveriesComponent } from './features/admin/admin-discoveries/admin-discoveries.component';
 import { AdminDiscoveryEditComponent } from './features/admin/admin-discovery-edit/admin-discovery-edit.component';
+import { AdminGalleriesComponent } from './features/admin/admin-galleries/admin-galleries.component';
+import { AdminGalleryEditComponent } from './features/admin/admin-gallery-edit/admin-gallery-edit.component';
 import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
@@ -34,6 +36,16 @@ export const routes: Routes = [
   {
     path: 'admin/discoveries/:id',
     component: AdminDiscoveryEditComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'admin/galleries',
+    component: AdminGalleriesComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'admin/galleries/:id',
+    component: AdminGalleryEditComponent,
     canActivate: [authGuard],
   },
 ];

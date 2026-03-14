@@ -16,21 +16,21 @@
     <app-slider
       title="CASA PEPPE | INTÉRIEUR"
       class="top-left"
-      [images]="inside"
+      [images]="inside()"
       (imageSelected)="onImageSelected($event)"
       [contain]="true"
     ></app-slider>
     <app-slider
       title="CASA PEPPE | EXTÉRIEUR"
       class="top-right"
-      [images]="outside"
+      [images]="outside()"
       (imageSelected)="onImageSelected($event)"
       [contain]="true"
     ></app-slider>
     <app-slider
       title="CASA PEPPE | PLANS"
       class="bottom-left"
-      [images]="map"
+      [images]="map()"
       (imageSelected)="onImageSelected($event)"
       [autoplay]="false"
       [contain]="true"
