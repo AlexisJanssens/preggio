@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ImgComponent } from '../img/img.component';
 
 @Component({
   selector: 'app-card',
-  imports: [RouterModule],
+  imports: [RouterModule, ImgComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css',
 })

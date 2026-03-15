@@ -1,0 +1,8 @@
+<div class="img-wrapper" [class.natural]="natural">
+  @if (!loaded) {
+    <div class="loader-overlay">
+      <app-dots-loader />
+    </div>
+  }
+  <img [src]="src" [alt]="alt" [class.visible]="loaded" [class.natural]="natural" (load)="loaded = true" />
+</div>

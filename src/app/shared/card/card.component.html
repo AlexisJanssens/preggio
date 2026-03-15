@@ -2,7 +2,7 @@
   <h3 [style.color]="titleColor">{{ title }}</h3>
 </div>
 <div class="img" [routerLink]="pathLink" (click)="cardClicked()">
-  <img [src]="imagePath" />
+  <app-img [src]="imagePath" />
   <div class="text-hover">
     <p>{{ link }}</p>
   </div>

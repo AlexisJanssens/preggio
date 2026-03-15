@@ -11,6 +11,10 @@
         [fixed]="true"
         [isAutoplay]="true"
       ></app-fade-slider>
+    } @else {
+      <div class="slider-placeholder">
+        <app-dots-loader />
+      </div>
     }
     <div class="scroll-hint">
       <span class="scroll-arrow"></span>

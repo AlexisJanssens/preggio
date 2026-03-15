@@ -1,4 +1,9 @@
-<div class="slider-container" [style.position]="fixed ? 'sticky' : 'relative'">
+<div class="slider-container" [style.position]="fixed ? 'sticky' : 'relative'" [class.ready]="ready">
+  @if (!ready) {
+    <div class="loader-overlay">
+      <app-dots-loader />
+    </div>
+  }
   <div class="slider-inner">
     @for(slide of images; track slide; let i = $index) {
     <div

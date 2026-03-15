@@ -6,19 +6,14 @@
   ></app-nav-bar>
 
   @if (discovery(); as d) {
-    @if (d.imgPath) {
-      <div class="banner">
-        <img class="banner-image" [src]="d.imgPath" alt="Banner Image" />
-        <div class="title">
-          <h1>{{ d.title }}</h1>
-        </div>
-      </div>
-    }
+    <div class="title-section">
+      <h1>{{ d.title }}</h1>
+    </div>
     <div class="discovery-container">
       <div class="images">
         @for (img of d.imgs; track $index) {
           <div class="discovery-img">
-            <img [src]="img" alt="Discovery Image" />
+            <app-img [src]="img" alt="Discovery Image" [natural]="true" />
           </div>
         }
       </div>

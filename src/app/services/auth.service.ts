@@ -15,7 +15,7 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<void> {
     await signInWithEmailAndPassword(this.auth, email, password);
-    this.router.navigate(['/admin/discoveries']);
+    this.router.navigate(['/admin/overview']);
   }
 
   async logout(): Promise<void> {

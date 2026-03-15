@@ -3,11 +3,12 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
 import { NavBarService } from '../../shared/nav-bar.service';
 import { FadeSliderComponent } from '../../shared/fade-slider/fade-slider.component';
+import { DotsLoaderComponent } from '../../shared/dots-loader/dots-loader.component';
 import { GalleriesService } from '../../services/galleries.service';
 
 @Component({
   selector: 'app-location',
-  imports: [NavBarComponent, FadeSliderComponent],
+  imports: [NavBarComponent, FadeSliderComponent, DotsLoaderComponent],
   templateUrl: './location.component.html',
   styleUrl: './location.component.css',
 })

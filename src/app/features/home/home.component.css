@@ -11,6 +11,15 @@
   top: 0;
 }
 
+.slider-placeholder {
+  position: absolute;
+  inset: 0;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .flex-wrapper {
   display: flex;
   flex-direction: column;

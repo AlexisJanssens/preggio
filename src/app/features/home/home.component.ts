@@ -6,6 +6,7 @@ import { FadeSliderComponent } from '../../shared/fade-slider/fade-slider.compon
 import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
 import { NavBarService } from '../../shared/nav-bar.service';
 import { ReviewsCarouselComponent, Review } from '../../shared/reviews-carousel/reviews-carousel.component';
+import { DotsLoaderComponent } from '../../shared/dots-loader/dots-loader.component';
 import { GalleriesService } from '../../services/galleries.service';
 
 @Component({
@@ -15,6 +16,7 @@ import { GalleriesService } from '../../services/galleries.service';
     FadeSliderComponent,
     NavBarComponent,
     ReviewsCarouselComponent,
+    DotsLoaderComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

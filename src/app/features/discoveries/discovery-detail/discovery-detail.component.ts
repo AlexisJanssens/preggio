@@ -4,11 +4,12 @@ import { switchMap } from 'rxjs/operators';
 import { DiscoveriesService } from '../../../services/discoveries.service';
 import { NavBarComponent } from '../../../shared/nav-bar/nav-bar.component';
 import { NavBarService } from '../../../shared/nav-bar.service';
+import { ImgComponent } from '../../../shared/img/img.component';
 import { Discovery } from '../../../models/discovery.model';
 
 @Component({
   selector: 'app-discovery-detail',
-  imports: [NavBarComponent],
+  imports: [NavBarComponent, ImgComponent],
   templateUrl: './discovery-detail.component.html',
   styleUrl: './discovery-detail.component.css',
 })

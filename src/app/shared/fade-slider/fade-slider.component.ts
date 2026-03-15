@@ -2,15 +2,17 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnChanges,
   OnDestroy,
-  OnInit,
   Output,
+  SimpleChanges,
 } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { DotsLoaderComponent } from '../dots-loader/dots-loader.component';
 
 @Component({
   selector: 'app-fade-slider',
-  imports: [],
+  imports: [DotsLoaderComponent],
   templateUrl: './fade-slider.component.html',
   styleUrl: './fade-slider.component.css',
   animations: [
@@ -26,7 +28,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ]),
   ],
 })
-export class FadeSliderComponent implements OnDestroy {
+export class FadeSliderComponent implements OnDestroy, OnChanges {
   @Input() contain = false;
   @Input() images: string[] = [];
   @Input() interval = 3000;
@@ -48,8 +50,19 @@ export class FadeSliderComponent implements OnDestroy {
   @Output() slideChange = new EventEmitter<number>();
   @Output() imageClick = new EventEmitter<number>();
 
+  ready = false;
+
   private _isAutoplay = true;
   private autoplayInterval: any;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['images'] && this.images.length > 0) {
+      this.ready = false;
+      const img = new Image();
+      img.onload = () => { this.ready = true; };
+      img.src = this.images[0];
+    }
+  }
 
   ngOnDestroy(): void {
     this.stopAutoplay();
