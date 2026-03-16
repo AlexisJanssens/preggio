@@ -29,7 +29,7 @@ export class HomeComponent {
 
   protected imagePaths = {
     scuola: 'assets/img/vignettes/VIGNETTE2-IMG_6993_SCUOLA_400.webp',
-    peppe: 'assets/img/vignettes/VIGNETTE1-IMG_6629 2R_PEPPE_400.webp',
+    peppe: 'assets/img/vignettes/VIGNETTE1-IMG_6629%202R_PEPPE_400.webp',
     piscine: 'assets/img/vignettes/VIGNETTE3PISCINE_IMG_8208_PROPRIETE_400.webp',
   }
 

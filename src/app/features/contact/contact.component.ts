@@ -15,7 +15,7 @@ export class ContactComponent {
   isNavBarVisible = this.navBarService.navBarState;
 
   imagePaths = {
-    pepe: 'assets/img/vignettes/VIGNETTE1-IMG_6629 2R_PEPPE_400.webp',
+    pepe: 'assets/img/vignettes/VIGNETTE1-IMG_6629%202R_PEPPE_400.webp',
     scuola: 'assets/img/vignettes/VIGNETTE2-IMG_6993_SCUOLA_400.webp',
   };
 
