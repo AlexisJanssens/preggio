@@ -18,5 +18,5 @@ export class LocationComponent {
 
   isNavBarVisible = this.navBarService.navBarState;
 
-  slider = toSignal(this.galleriesService.getGallery('location-slider'), { initialValue: [] });
+  slider = toSignal(this.galleriesService.getGallery('MONTE_TEZIO'), { initialValue: [] });
 }

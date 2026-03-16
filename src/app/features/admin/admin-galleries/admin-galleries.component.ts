@@ -6,17 +6,17 @@ import { AuthService } from '../../../services/auth.service';
 import { Gallery } from '../../../models/gallery.model';
 
 const SEED_GALLERIES: Omit<Gallery, 'updatedAt'>[] = [
-  { id: 'home-slider', label: 'Accueil - Slider', images: [] },
-  { id: 'home-vignettes', label: 'Accueil - Vignettes', images: [], namedImages: { pepe: '', scuola: '', situation: '' } },
-  { id: 'property-pool', label: 'Propriété - Piscine', images: [] },
-  { id: 'property-gardens', label: 'Propriété - Jardins', images: [] },
-  { id: 'casa-pepe-inside', label: 'Casa Peppe - Intérieur', images: [] },
-  { id: 'casa-pepe-outside', label: 'Casa Peppe - Extérieur', images: [] },
-  { id: 'casa-pepe-map', label: 'Casa Peppe - Plans', images: [] },
-  { id: 'casa-scuola-inside', label: 'Casa Scuola - Intérieur', images: [] },
-  { id: 'casa-scuola-outside', label: 'Casa Scuola - Extérieur', images: [] },
+  { id: 'ACCUEIL_SLIDE', label: 'Accueil - Slider', images: [] },
+  { id: 'VIGNETTESpageaccueil', label: 'Accueil - Vignettes', images: [], namedImages: { pepe: '', scuola: '', situation: '' } },
+  { id: 'PISCINE', label: 'Propriété - Piscine', images: [] },
+  { id: 'JARDINS', label: 'Propriété - Jardins', images: [] },
+  { id: 'PEPPE_INTERIEUR', label: 'Casa Peppe - Intérieur', images: [] },
+  { id: 'PEPPE_EXTERIEUR', label: 'Casa Peppe - Extérieur', images: [] },
+  { id: 'PEPPE_PLAN', label: 'Casa Peppe - Plans', images: [] },
+  { id: 'SCUOLA_INTERIEUR', label: 'Casa Scuola - Intérieur', images: [] },
+  { id: 'SCUOLA_EXTERIEUR', label: 'Casa Scuola - Extérieur', images: [] },
   { id: 'casa-scuola-map', label: 'Casa Scuola - Plans', images: [] },
-  { id: 'location-slider', label: 'Situation - Slider', images: [] },
+  { id: 'MONTE_TEZIO', label: 'Situation - Slider', images: [] },
 ];
 
 @Component({

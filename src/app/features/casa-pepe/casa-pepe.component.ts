@@ -26,9 +26,12 @@ export class CasaPepeComponent {
   private galleriesService = inject(GalleriesService);
   isNavBarVisible = this.navBarService.navBarState;
 
-  inside = toSignal(this.galleriesService.getGallery('casa-pepe-inside'), { initialValue: [] });
-  outside = toSignal(this.galleriesService.getGallery('casa-pepe-outside'), { initialValue: [] });
-  map = toSignal(this.galleriesService.getGallery('casa-pepe-map'), { initialValue: [] });
+  inside = toSignal(this.galleriesService.getGallery('PEPPE_INTERIEUR'), { initialValue: [] });
+  insideThumbs = toSignal(this.galleriesService.getGallery('PEPPE_INTERIEUR_MINIATURES'), { initialValue: [] });
+  outside = toSignal(this.galleriesService.getGallery('PEPPE_EXTERIEUR'), { initialValue: [] });
+  outsideThumbs = toSignal(this.galleriesService.getGallery('PEPPE_EXTERIEUR_MINIATURES'), { initialValue: [] });
+  map = toSignal(this.galleriesService.getGallery('PEPPE_PLAN'), { initialValue: [] });
+  mapThumbs = toSignal(this.galleriesService.getGallery('PEPPE_PLANS_MINI'), { initialValue: [] });
 
   isAtBottom = false;
 

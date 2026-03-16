@@ -23,6 +23,7 @@ export class SliderComponent {
 
   @Input() contain = false;
   @Input() images: string[] = [];
+  @Input() fullImages: string[] = [];
   @Input() title: string = 'Slider';
   @Input() autoplay = true;
   @Output() imageSelected = new EventEmitter<{
@@ -60,6 +61,9 @@ export class SliderComponent {
   }
 
   onImageClick(index: number) {
-    this.imageSelected.emit({ images: this.images, index: index });
+    this.imageSelected.emit({
+      images: this.fullImages.length ? this.fullImages : this.images,
+      index,
+    });
   }
 }

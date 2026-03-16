@@ -26,9 +26,12 @@ export class CasaScuolaComponent {
   private galleriesService = inject(GalleriesService);
   isNavBarVisible = this.navBarService.navBarState;
 
-  inside = toSignal(this.galleriesService.getGallery('casa-scuola-inside'), { initialValue: [] });
-  outside = toSignal(this.galleriesService.getGallery('casa-scuola-outside'), { initialValue: [] });
+  inside = toSignal(this.galleriesService.getGallery('SCUOLA_INTERIEUR'), { initialValue: [] });
+  insideThumbs = toSignal(this.galleriesService.getGallery('SCUOLA_INTERIEUR_MINIATURES'), { initialValue: [] });
+  outside = toSignal(this.galleriesService.getGallery('SCUOLA_EXTERIEUR'), { initialValue: [] });
+  outsideThumbs = toSignal(this.galleriesService.getGallery('SCUOLA_EXTERIEUR_MINIATURES'), { initialValue: [] });
   map = toSignal(this.galleriesService.getGallery('casa-scuola-map'), { initialValue: [] });
+  mapThumbs = toSignal(this.galleriesService.getGallery('casa-scuola-map-thumbs'), { initialValue: [] });
 
   isAtBottom = false;
 

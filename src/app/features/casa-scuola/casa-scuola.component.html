@@ -15,7 +15,8 @@
   <div class="flex-wrapper">
     <div class="top">
       <app-slider
-        [images]="inside()"
+        [images]="insideThumbs()"
+        [fullImages]="inside()"
         title="CASA SCUOLA | INTÉRIEUR"
         class="top-left"
         (imageSelected)="onImageSelected($event)"
@@ -23,7 +24,8 @@
       ></app-slider>
       <app-slider
         title="CASA SCUOLA | EXTÉRIEUR"
-        [images]="outside()"
+        [images]="outsideThumbs()"
+        [fullImages]="outside()"
         class="top-right"
         (imageSelected)="onImageSelected($event)"
         [contain]="true"
@@ -33,7 +35,8 @@
       <app-slider
         title="CASA SCUOLA | PLANS"
         class="bottom-left"
-        [images]="map()"
+        [images]="mapThumbs()"
+        [fullImages]="map()"
         (imageSelected)="onImageSelected($event)"
         [contain]="true"
         [autoplay]="false"

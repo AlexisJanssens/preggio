@@ -27,7 +27,7 @@ export class AdminGalleryEditComponent implements OnInit {
   readonly namedKeys = ['pepe', 'scuola', 'situation'];
 
   get isNamedGallery(): boolean {
-    return this.galleryId === 'home-vignettes';
+    return this.galleryId === 'VIGNETTESpageaccueil';
   }
 
   ngOnInit(): void {

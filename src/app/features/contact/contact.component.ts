@@ -19,7 +19,7 @@ export class ContactComponent {
   isNavBarVisible = this.navBarService.navBarState;
 
   imagePaths = toSignal(
-    this.galleriesService.getGalleryDoc('home-vignettes').pipe(
+    this.galleriesService.getGalleryDoc('VIGNETTESpageaccueil').pipe(
       map((g) => (g?.namedImages ?? { pepe: '', scuola: '' }) as { pepe: string; scuola: string })
     ),
     { initialValue: { pepe: '', scuola: '' } }

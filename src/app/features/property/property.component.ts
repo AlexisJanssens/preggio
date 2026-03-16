@@ -20,8 +20,10 @@ export class PropertyComponent {
   private galleriesService = inject(GalleriesService);
   isNavBarVisible = this.navBarService.navBarState;
 
-  swimmingPool = toSignal(this.galleriesService.getGallery('property-pool'), { initialValue: [] });
-  gardens = toSignal(this.galleriesService.getGallery('property-gardens'), { initialValue: [] });
+  swimmingPool = toSignal(this.galleriesService.getGallery('PISCINE'), { initialValue: [] });
+  swimmingPoolThumbs = toSignal(this.galleriesService.getGallery('PISCINE_MINI'), { initialValue: [] });
+  gardens = toSignal(this.galleriesService.getGallery('JARDINS'), { initialValue: [] });
+  gardensThumbs = toSignal(this.galleriesService.getGallery('JARDINS_MINI'), { initialValue: [] });
 
   onImageSelected(event: { images: string[]; index: number }) {
     this.fullScreenSlider.open(event.images, event.index);

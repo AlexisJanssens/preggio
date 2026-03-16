@@ -27,6 +27,12 @@ export class HomeComponent {
 
   isNavBarVisible = this.navBarService.navBarState;
 
+  protected imagePaths = {
+    scuola: 'assets/img/vignettes/VIGNETTE2-IMG_6993_SCUOLA_400.webp',
+    peppe: 'assets/img/vignettes/VIGNETTE1-IMG_6629 2R_PEPPE_400.webp',
+    piscine: 'assets/img/vignettes/VIGNETTE3PISCINE_IMG_8208_PROPRIETE_400.webp',
+  }
+
   reviews: Review[] = [
     { authorFirstName: 'Marie', authorLastName: 'Dupont', rating: 5, picture: '', description: 'Un séjour absolument magnifique, la vue sur les collines est à couper le souffle !' },
     { authorFirstName: 'Thomas', authorLastName: 'Bernard', rating: 5, picture: '', description: 'Piscine superbe, maisons très bien équipées. Nous reviendrons sans hésiter.' },
@@ -38,12 +44,7 @@ export class HomeComponent {
     { authorFirstName: 'Marc', authorLastName: 'Girard', rating: 5, picture: '', description: 'Deux semaines inoubliables. Le coucher de soleil depuis la terrasse vaut le voyage à lui seul.' },
   ];
 
-  slider = toSignal(this.galleriesService.getGallery('home-slider'), { initialValue: [] });
+  slider = toSignal(this.galleriesService.getGallery('ACCUEIL_SLIDE'), { initialValue: [] });
 
-  imagePaths = toSignal(
-    this.galleriesService.getGalleryDoc('home-vignettes').pipe(
-      map((g) => (g?.namedImages ?? { pepe: '', scuola: '', situation: '' }) as { pepe: string; scuola: string; situation: string })
-    ),
-    { initialValue: { pepe: '', scuola: '', situation: '' } }
-  );
+ 
 }
