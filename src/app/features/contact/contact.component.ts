@@ -1,10 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs/operators';
 import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
 import { NavBarService } from '../../shared/nav-bar.service';
 import { CardComponent } from '../../shared/card/card.component';
-import { GalleriesService } from '../../services/galleries.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,16 +11,13 @@ import { GalleriesService } from '../../services/galleries.service';
 })
 export class ContactComponent {
   private navBarService = inject(NavBarService);
-  private galleriesService = inject(GalleriesService);
 
   isNavBarVisible = this.navBarService.navBarState;
 
-  imagePaths = toSignal(
-    this.galleriesService.getGalleryDoc('VIGNETTESpageaccueil').pipe(
-      map((g) => (g?.namedImages ?? { pepe: '', scuola: '' }) as { pepe: string; scuola: string })
-    ),
-    { initialValue: { pepe: '', scuola: '' } }
-  );
+  imagePaths = {
+    pepe: 'assets/img/vignettes/VIGNETTE1-IMG_6629 2R_PEPPE_400.webp',
+    scuola: 'assets/img/vignettes/VIGNETTE2-IMG_6993_SCUOLA_400.webp',
+  };
 
   titleColor = '#607877';
 
