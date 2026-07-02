@@ -1,29 +1,29 @@
-import { Component, Input } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { Component, Input, signal, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-review-card',
-  imports: [FontAwesomeModule],
+  imports: [],
   templateUrl: './review-card.component.html',
   styleUrl: './review-card.component.css',
 })
-export class ReviewCardComponent {
+export class ReviewCardComponent implements AfterViewInit {
   @Input() description!: string;
   @Input() authorFirstName!: string;
-  @Input() authorLastName!: string;
-  @Input() picture: string = '';
-  @Input() rating!: number;
+  @Input() rating?: number;
+  @Input() picture?: string;
+  @Input() authorLastName?: string;
 
-  faStar = faStar;
+  @ViewChild('descEl') descEl!: ElementRef<HTMLParagraphElement>;
 
-  get stars(): boolean[] {
-    return Array.from({ length: 5 }, (_, i) => i < this.rating);
+  expanded = signal(false);
+  overflows = signal(false);
+
+  ngAfterViewInit(): void {
+    const el = this.descEl.nativeElement;
+    this.overflows.set(el.scrollHeight > el.offsetHeight);
   }
 
-  get initials(): string {
-    return (
-      (this.authorFirstName?.[0] ?? '') + (this.authorLastName?.[0] ?? '')
-    ).toUpperCase();
+  toggle(): void {
+    this.expanded.update(v => !v);
   }
 }

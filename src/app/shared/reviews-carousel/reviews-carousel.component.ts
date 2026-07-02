@@ -6,9 +6,6 @@ import { ReviewCardComponent } from '../review-card/review-card.component';
 export interface Review {
   description: string;
   authorFirstName: string;
-  authorLastName: string;
-  picture: string;
-  rating: number;
 }
 
 @Component({

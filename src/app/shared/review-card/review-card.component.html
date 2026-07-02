@@ -1,20 +1,13 @@
-<div class="review-card">
-  <div class="card-header">
-    @if (picture) {
-      <img class="author-picture" [src]="picture" [alt]="authorFirstName + ' ' + authorLastName" />
-    } @else {
-      <div class="author-initials">{{ initials }}</div>
-    }
-    <div class="author-info">
-      <span class="author-name">{{ authorFirstName }} {{ authorLastName }}</span>
-      <div class="stars">
-        @for (filled of stars; track $index) {
-          <fa-icon [icon]="faStar" [class]="filled ? 'star filled' : 'star empty'"></fa-icon>
-        }
-      </div>
-    </div>
-  </div>
+<div class="review-card" [class.expanded]="expanded()">
   <div class="card-body">
-    <p class="description">{{ description }}</p>
+    <p #descEl class="description" [class.clamped]="!expanded()">{{ description }}</p>
+    @if (overflows()) {
+      <button class="read-more" (click)="toggle()">
+        {{ expanded() ? 'lire moins' : 'lire plus' }}
+      </button>
+    }
+  </div>
+  <div class="author-info">
+    <span class="author-name">{{ authorFirstName }}</span>
   </div>
 </div>

@@ -27,14 +27,15 @@ export class HomeComponent {
   };
 
   reviews: Review[] = [
-    { authorFirstName: 'Marie', authorLastName: 'Dupont', rating: 5, picture: '', description: 'Un séjour absolument magnifique, la vue sur les collines est à couper le souffle !' },
-    { authorFirstName: 'Thomas', authorLastName: 'Bernard', rating: 5, picture: '', description: 'Piscine superbe, maisons très bien équipées. Nous reviendrons sans hésiter.' },
-    { authorFirstName: 'Sophie', authorLastName: 'Martin', rating: 4, picture: '', description: 'Endroit calme et authentique, parfait pour se ressourcer en famille.' },
-    { authorFirstName: 'Jean', authorLastName: 'Leroy', rating: 5, picture: '', description: 'La Toscane-Ombrie dans toute sa splendeur. Le hameau est un vrai coup de cœur.' },
-    { authorFirstName: 'Claire', authorLastName: 'Fontaine', rating: 5, picture: '', description: 'Une adresse rare, entre nature sauvage et confort moderne. On se sent vraiment dépaysé.' },
-    { authorFirstName: 'Luca', authorLastName: 'Rossi', rating: 5, picture: '', description: 'Posto meraviglioso, ospitalità eccellente. La piscina con vista sulle colline è indimenticabile.' },
-    { authorFirstName: 'Isabelle', authorLastName: 'Morel', rating: 4, picture: '', description: 'Très bel endroit, bien isolé du bruit. La maison est spacieuse et joliment décorée.' },
-    { authorFirstName: 'Marc', authorLastName: 'Girard', rating: 5, picture: '', description: 'Deux semaines inoubliables. Le coucher de soleil depuis la terrasse vaut le voyage à lui seul.' },
+    { authorFirstName: 'Elise', description: 'Ce coin de paradis est absolument parfait. La maison est charmante, très joliment décorée, ultra équipée. Il y a même des livres et jeux pour enfants en français ! Le must de la maison est une vue à couper le souffle sur les collines d’Ombrie. ' },
+
+    { authorFirstName: 'Sibylle', description: 'Petit havre de paix au milieu de nulle part ! La maison est superbement situé dans la campagne, la piscine est parfaite, les lits sont très bons...' },
+    { authorFirstName: 'Sophie', description: 'Très agréable séjour dans une maison de charme dans un environnement exceptionnel. Propriétaire très sympathique. Très bons échanges.' },
+    { authorFirstName: 'Catherine', description: 'Tout a déjà été dit. Ce que nous avons adoré un bel environnement avec de superbes vues. Piscine parfaite et belle, esthétique où chaque coin est rendu incroyablement beau. Nous avons adoré et serions ravis de revenir…' },
+    { authorFirstName: 'Andreas', description: 'Une adresse rare, entre nature sauvage et confort moderne. On se sent vraiment dépaysé.' },
+    { authorFirstName: 'Katharina', description: '… un petit paradis ombrien… Nous sommes allés dans de nombreuses maisons de vacances, mais nous n’en avons pas trouvé une aussi bien équipée que celle-ci. Malgré la canicule de cet été, avec la brise rafraîchissante, la piscine et les anciens murs épais de la maison, ce n’était jamais trop chaud. Nuits étoilées avec des étoiles filantes bien visibles, un agréable salon ombragé, absence de moustiques, une vue imprenable sur les bois et les collines environnantes, la vie sauvage le long de la route, ce sont les bons souvenirs de ces vacances qui resteront dans nos cœurs.' },
+    { authorFirstName: 'Mathieu', description: 'Villa perdue dans un endroit calme et magique à 2 pas de la Toscane.Un endroit où l’on pourra se ressourcer et passer de beaux moments en famille. Un petit havre de paix.À noter que la maison est vraiment bien équipée.' },
+    { authorFirstName: 'Mathilde', description: "Nous avons passé une magnifique semaine dans cette jolie maison. Nous avons pu découvrir cette belle région d'Ombrie tout en profitant de la belle nature et des paysages magnifiques. La piscine a beaucoup plu aux enfants ainsi que les bons raisins sur la treille. La maison était très bien équipée et confortable. Merci de cet accueil." },
   ];
 
   slider = toSignal(this.galleriesService.getGallery('ACCUEIL_SLIDE'), { initialValue: [] });
