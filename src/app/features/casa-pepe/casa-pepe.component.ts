@@ -3,8 +3,6 @@ import { Component, ViewChild, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { SliderComponent } from '../../shared/slider/slider.component';
 import { FullScreenSliderComponent } from '../../shared/full-screen-slider/full-screen-slider.component';
-import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
-import { NavBarService } from '../../shared/nav-bar.service';
 import { GalleriesService } from '../../services/galleries.service';
 
 @Component({
@@ -13,7 +11,6 @@ import { GalleriesService } from '../../services/galleries.service';
     CommonModule,
     SliderComponent,
     FullScreenSliderComponent,
-    NavBarComponent,
   ],
   templateUrl: './casa-pepe.component.html',
   styleUrl: './casa-pepe.component.css',
@@ -22,9 +19,7 @@ export class CasaPepeComponent {
   @ViewChild(FullScreenSliderComponent)
   fullScreenSlider!: FullScreenSliderComponent;
 
-  private navBarService = inject(NavBarService);
   private galleriesService = inject(GalleriesService);
-  isNavBarVisible = this.navBarService.navBarState;
 
   inside = toSignal(this.galleriesService.getGallery('PEPPE_INTERIEUR'), { initialValue: [] });
   insideThumbs = toSignal(this.galleriesService.getGallery('PEPPE_INTERIEUR_MINIATURES'), { initialValue: [] });

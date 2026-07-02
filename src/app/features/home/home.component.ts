@@ -2,8 +2,6 @@ import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CardComponent } from '../../shared/card/card.component';
 import { FadeSliderComponent } from '../../shared/fade-slider/fade-slider.component';
-import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
-import { NavBarService } from '../../shared/nav-bar.service';
 import { ReviewsCarouselComponent, Review } from '../../shared/reviews-carousel/reviews-carousel.component';
 import { DotsLoaderComponent } from '../../shared/dots-loader/dots-loader.component';
 import { GalleriesService } from '../../services/galleries.service';
@@ -13,7 +11,6 @@ import { GalleriesService } from '../../services/galleries.service';
   imports: [
     CardComponent,
     FadeSliderComponent,
-    NavBarComponent,
     ReviewsCarouselComponent,
     DotsLoaderComponent,
   ],
@@ -21,10 +18,7 @@ import { GalleriesService } from '../../services/galleries.service';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  private navBarService = inject(NavBarService);
   private galleriesService = inject(GalleriesService);
-
-  isNavBarVisible = this.navBarService.navBarState;
 
   protected imagePaths = {
     scuola: 'assets/img/vignettes/VIGNETTE2-IMG_6993_SCUOLA_400.webp',

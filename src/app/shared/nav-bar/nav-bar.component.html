@@ -7,7 +7,7 @@
     <li>
       <a
         class="nav-link nav-link-ltr"
-        [class.active]="currentPage === page.title"
+        [class.active]="isActive(page.path)"
         href="{{ page.path }}"
         >{{ page.title }}</a
       >

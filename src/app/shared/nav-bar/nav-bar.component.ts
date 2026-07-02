@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavBarPage } from './models';
 
 @Component({
@@ -8,40 +9,20 @@ import { NavBarPage } from './models';
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent {
-  @Input() currentPage: string = 'Accueil';
+  private router = inject(Router);
 
   public pages: NavBarPage[] = [
-    {
-      title: 'Accueil',
-      path: 'home',
-    },
-    {
-      title: 'Casa Peppe',
-      path: 'casa-peppe',
-    },
-    {
-      title: 'Casa Scuola',
-      path: 'casa-scuola',
-    },
-    {
-      title: 'La propriété',
-      path: 'property',
-    },
-    {
-      title: 'Situation',
-      path: 'location',
-    },
-    {
-      title: 'Expériences',
-      path: 'discoveries',
-    },
-    {
-      title: 'Atmosphères',
-      path: 'atmosphere',
-    },
-    {
-      title: 'Contact',
-      path: 'contact',
-    },
+    { title: 'Accueil',       path: 'home' },
+    { title: 'Casa Peppe',    path: 'casa-peppe' },
+    { title: 'Casa Scuola',   path: 'casa-scuola' },
+    { title: 'La propriété',  path: 'property' },
+    { title: 'Situation',     path: 'location' },
+    { title: 'Expériences',   path: 'discoveries' },
+    { title: 'Atmosphères',   path: 'atmosphere' },
+    { title: 'Contact',       path: 'contact' },
   ];
+
+  isActive(path: string): boolean {
+    return this.router.url.startsWith('/' + path);
+  }
 }
