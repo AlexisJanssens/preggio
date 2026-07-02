@@ -1,20 +1,9 @@
-import { Injectable, inject } from '@angular/core';
-import {
-  Firestore,
-  collection,
-  collectionData,
-  doc,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  query,
-  orderBy,
-} from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Discovery } from '../models/discovery.model';
 
-const SEED_DATA: Discovery[] = [
+const DISCOVERIES: Discovery[] = [
   {
     title: 'Umbria Jazz',
     imgPath: 'assets/img/PROPRIETE/hamac_1920.jpg',
@@ -29,10 +18,10 @@ const SEED_DATA: Discovery[] = [
     imgPath: 'assets/img/PROPRIETE/hamac_1920.jpg',
     link: 'monte-tezio',
     paragraphs: [
-      'Sur la route de crête entre Preggio et Castel Rigone, vous pouvez admiré l\'immense paysage qui s\'ouvre vers la chaîne des Appenins.',
-      'Au premier plan vous apercevez le Monte Tezzio à l\'allure de gros bison endormi. Chaussez vos bottines, partez tôt en été, dans le sac : eau, saucisson, pecorino, pane et gressini.',
-      'L\'ascension par le petit chemin qui démarre à gauche de la maison forestière est charmant. Le paysage s\'ouvre lentement et on accède au sommet décoiffé et décoiffant.',
-      'À chaque saison, on trouve un coin sympa, le grechetto achèvera de rendre cette journée mémorable.',
+      "Sur la route de crête entre Preggio et Castel Rigone, vous pouvez admiré l'immense paysage qui s'ouvre vers la chaîne des Appenins.",
+      "Au premier plan vous apercevez le Monte Tezzio à l'allure de gros bison endormi. Chaussez vos bottines, partez tôt en été, dans le sac : eau, saucisson, pecorino, pane et gressini.",
+      "L'ascension par le petit chemin qui démarre à gauche de la maison forestière est charmant. Le paysage s'ouvre lentement et on accède au sommet décoiffé et décoiffant.",
+      "À chaque saison, on trouve un coin sympa, le grechetto achèvera de rendre cette journée mémorable.",
     ],
     imgs: [
       'assets/img/DECOUVERTES/MONTE-TEZIO/MonteTezio_IMG_1171_1200.jpg',
@@ -63,36 +52,11 @@ const SEED_DATA: Discovery[] = [
 
 @Injectable({ providedIn: 'root' })
 export class DiscoveriesService {
-  private firestore = inject(Firestore);
-  private col = collection(this.firestore, 'discoveries');
-
   getDiscoveries(): Observable<Discovery[]> {
-    return collectionData(query(this.col, orderBy('order', 'asc')), {
-      idField: 'id',
-    }) as Observable<Discovery[]>;
+    return of([...DISCOVERIES].sort((a, b) => (a.order ?? 0) - (b.order ?? 0)));
   }
 
   getDiscoveryByLink(link: string): Observable<Discovery | undefined> {
-    return this.getDiscoveries().pipe(
-      map((list) => list.find((d) => d.link === link))
-    );
-  }
-
-  add(discovery: Omit<Discovery, 'id'>): Promise<any> {
-    return addDoc(this.col, discovery);
-  }
-
-  update(id: string, discovery: Partial<Discovery>): Promise<void> {
-    return updateDoc(doc(this.firestore, 'discoveries', id), discovery as any);
-  }
-
-  delete(id: string): Promise<void> {
-    return deleteDoc(doc(this.firestore, 'discoveries', id));
-  }
-
-  async seed(): Promise<void> {
-    for (const d of SEED_DATA) {
-      await addDoc(this.col, d);
-    }
+    return this.getDiscoveries().pipe(map((list) => list.find((d) => d.link === link)));
   }
 }

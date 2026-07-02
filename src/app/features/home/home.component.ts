@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs/operators';
 import { CardComponent } from '../../shared/card/card.component';
 import { FadeSliderComponent } from '../../shared/fade-slider/fade-slider.component';
 import { NavBarComponent } from '../../shared/nav-bar/nav-bar.component';
@@ -31,7 +30,7 @@ export class HomeComponent {
     scuola: 'assets/img/vignettes/VIGNETTE2-IMG_6993_SCUOLA_400.webp',
     peppe: 'assets/img/vignettes/VIGNETTE1-IMG_6629%202R_PEPPE_400.webp',
     piscine: 'assets/img/vignettes/VIGNETTE3PISCINE_IMG_8208_PROPRIETE_400.webp',
-  }
+  };
 
   reviews: Review[] = [
     { authorFirstName: 'Marie', authorLastName: 'Dupont', rating: 5, picture: '', description: 'Un séjour absolument magnifique, la vue sur les collines est à couper le souffle !' },
@@ -45,6 +44,4 @@ export class HomeComponent {
   ];
 
   slider = toSignal(this.galleriesService.getGallery('ACCUEIL_SLIDE'), { initialValue: [] });
-
- 
 }

@@ -1,5 +1,10 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+# Firebase / GCP service account keys — never commit these
+*serviceAccount*.json
+*service-account*.json
+*credentials*.json
+
 # Compiled output
 /dist
 /tmp
