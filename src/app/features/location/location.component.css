@@ -1,5 +1,5 @@
 .p-one {
-  background-image: url("../../../assets/img/SITUATION/SITUATION_IMG_6344_1920.jpg");
+  background-image: url("../../../assets/img/FONDS_webp/SITUATION_IMG_6344_1920.webp");
 }
 
 .top-layer {
@@ -41,14 +41,12 @@
 .map {
   height: 400px;
   min-width: 332px;
-  background-image: url("../../../assets/img/SITUATION/thumbnail_ITALIE-simplifie_600.png");
-  background-size: cover;
-}
 
+}
 .region {
   height: 400px;
   min-width: 454px;
-  background-image: url("../../../assets/img/SITUATION/ItalieCentre_900.png");
+
   background-size: cover;
   background-position: center center;
 }
