@@ -1,87 +1,80 @@
-.container {
-  position: relative;
-  min-height: 100vh;
+.page {
   display: flex;
   flex-direction: column;
 }
 
-.top-layer {
-  height: 100vh;
-  width: 100%;
-  position: sticky;
-  top: 0;
+/* ── HERO ─────────────────────────────────────────────────────────────── */
+.hero {
+  height: calc(100vh - 77px);
   background-image: url("../../../assets/img/FONDS_webp/FOND_PROPRIETE_IMG_6325_1920x1080.webp");
-  background-position: top center;
   background-size: cover;
-  background-attachment: fixed;
+  background-position: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container-slide {
-  min-height: 100vh;
+.hero-overlay {
+  text-align: center;
+  color: white;
+  background-color: rgba(96, 120, 119, 0.55);
+  backdrop-filter: blur(4px);
+  padding: 2rem 3rem;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  margin: 0 0 0.5rem;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ── SECTIONS ─────────────────────────────────────────────────────────── */
+.section-text,
+.section-galleries {
+  position: relative;
+  z-index: 1;
+  background-color: rgb(96, 120, 119);
+}
+
+/* ── TEXT BANNER ──────────────────────────────────────────────────────── */
+.section-text {
+  padding: 3rem 4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.text-content {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: rgba(96, 120, 119, 1);
+  gap: 0.75rem;
 }
 
-.grid-wrapper {
-  display: grid;
-  width: 100%;
-  min-height: 100%;
-  padding: 2rem;
-  background-color: rgba(196, 196, 196, 0.6);
-  backdrop-filter: blur(5px);
-  gap: 4rem;
-  z-index: 10;
+.text-content p {
+  color: rgba(255,255,255,0.9);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
 }
 
-.top-left {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+/* ── GALLERIES ────────────────────────────────────────────────────────── */
+.section-galleries {
+  padding: 3rem 4rem;
+}
+
+.galleries-row {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.top-right {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.text-banner {
-  width: calc(908px + 4rem);
-  grid-column: 1/3;
-  grid-row: 2;
-  color: rgb(59 75 74);
-
-  font-size: 20px;
-  margin: auto;
-  text-align: justify;
-  & p {
-    font-weight: 400;
-  }
-}
-
-footer {
-  width: 100%;
-  height: 500px;
-}
-
-.background {
-  width: 100%;
-  background-color: aquamarine;
-  background-size: cover;
-}
-
-.nav-container {
-  transition: transform 0.3s ease-in-out;
-  height: 76px;
-  max-width: 100%;
-}
-
-.nav-container.hidden {
-  transition: all 0.3s ease-in-out;
-  transform: translateY(-200%);
+  justify-content: center;
+  gap: 2rem;
 }

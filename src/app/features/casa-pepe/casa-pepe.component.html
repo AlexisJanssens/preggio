@@ -1,101 +1,98 @@
 <app-full-screen-slider></app-full-screen-slider>
-<div class="container">
-  <div class="top-layer">
-    <div class="scroll-hint">
-      <span class="scroll-arrow"></span>
-      <span class="scroll-arrow"></span>
-      <span class="scroll-arrow"></span>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-overlay">
+      <h1>CASA PEPPE</h1>
+      <p class="hero-sub">10 hôtes · 5 chambres · 3 salles de bain</p>
     </div>
   </div>
-  <div class="grid-wrapper">
-    <app-slider
-      title="CASA PEPPE | INTÉRIEUR"
-      class="top-left"
-      [images]="insideThumbs()"
-      [fullImages]="inside()"
-      (imageSelected)="onImageSelected($event)"
-      [contain]="true"
-    ></app-slider>
-    <app-slider
-      title="CASA PEPPE | EXTÉRIEUR"
-      class="top-right"
-      [images]="outsideThumbs()"
-      [fullImages]="outside()"
-      (imageSelected)="onImageSelected($event)"
-      [contain]="true"
-    ></app-slider>
-    <app-slider
-      title="CASA PEPPE | PLANS"
-      class="bottom-left"
-      [images]="mapThumbs()"
-      [fullImages]="map()"
-      (imageSelected)="onImageSelected($event)"
-      [autoplay]="false"
-      [contain]="true"
-    ></app-slider>
-    <div class="description-container" [class.at-bottom]="isAtBottom">
-      <h3>CASA PEPPE | DESCRIPTION</h3>
-      <div class="description" (scroll)="onDescriptionScroll($event)">
-        <div class="header">
-          <h4>DESCRIPTION DE LA CASA PEPPE</h4>
-          <p>10 hôtes | 5 chambres | 3 salles de bain</p>
-        </div>
-        <div class="paragraphe">
-          <p>
-            Restaurée tout en conservant son caractère authentique, décorée avec
-            soin et équipée de tout le confort moderne.
-          </p>
-        </div>
-        <div class="paragraphe">
-          <h4>NIVEAU 1 :</h4>
-          <p>- hall d’entrée, vestiaire</p>
-          <p>- grande salle à manger</p>
-          <p>- cuisine super équipée</p>
-          <p>- 1 chambre lit double</p>
-          <p>- 1 salle d’eau, douche à l’italienne et wc</p>
-          <p>
-            - 2 terrasses avec coins repas et salon de jardin ombragé, four à
-            pizza
-          </p>
-        </div>
-        <div class="paragraphe">
-          <h4>NIVEAU 2 :</h4>
-          <p>- séjour avec feu ouvert</p>
-          <p>- 1 chambre lit double</p>
-          <p>- 1 chambre lit double + lavabo</p>
-          <p>- 1 chambre 2 lits simples + lavabo</p>
-          <p>- 1 bureau</p>
-          <p>- 1 salle d’eau, douche à l’italienne et wc</p>
-        </div>
-        <div class="paragraphe">
-          <h4>NIVEAU 3 :</h4>
-          <p>- 1 chambre 2 lits simples, 1 lit enfant à barreaux</p>
-          <p>- 1 salle d’eau, douche et wc</p>
-        </div>
-        <div class="transparent-gradient-layer"></div>
+
+  <!-- DESCRIPTION -->
+  <section class="section-description">
+    <div class="desc-grid">
+      <div class="desc-block">
+        <h4>NIVEAU 1</h4>
+        <p>Hall d'entrée, vestiaire</p>
+        <p>Grande salle à manger</p>
+        <p>Cuisine super équipée</p>
+        <p>1 chambre lit double</p>
+        <p>1 salle d'eau, douche à l'italienne et wc</p>
+        <p>2 terrasses avec coins repas et salon de jardin ombragé, four à pizza</p>
+      </div>
+      <div class="desc-block">
+        <h4>NIVEAU 2</h4>
+        <p>Séjour avec feu ouvert</p>
+        <p>1 chambre lit double</p>
+        <p>1 chambre lit double + lavabo</p>
+        <p>1 chambre 2 lits simples + lavabo</p>
+        <p>1 bureau</p>
+        <p>1 salle d'eau, douche à l'italienne et wc</p>
+      </div>
+      <div class="desc-block">
+        <h4>NIVEAU 3</h4>
+        <p>1 chambre 2 lits simples, 1 lit enfant à barreaux</p>
+        <p>1 salle d'eau, douche et wc</p>
+      </div>
+      <div class="desc-block">
+        <h4>PROPRIÉTÉ</h4>
+        <p>Restaurée tout en conservant son caractère authentique</p>
+        <p>Décorée avec soin et équipée de tout le confort moderne</p>
+        <p>Terrasse et jardin privatifs</p>
+        <p>Piscine partagée (6m × 13m)</p>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- GALERIES -->
+  <section class="section-galleries">
+    <div class="galleries-row">
+      <div class="gallery-item">
+        <app-slider
+          [images]="insideThumbs()"
+          [fullImages]="inside()"
+          title="INTÉRIEUR"
+          (imageSelected)="onImageSelected($event)"
+          [contain]="false"
+        ></app-slider>
+      </div>
+      <div class="gallery-item">
+        <app-slider
+          [images]="outsideThumbs()"
+          [fullImages]="outside()"
+          title="EXTÉRIEUR"
+          (imageSelected)="onImageSelected($event)"
+          [contain]="false"
+        ></app-slider>
+      </div>
+      <div class="gallery-item">
+        <app-slider
+          [images]="mapThumbs()"
+          [fullImages]="map()"
+          title="PLANS"
+          (imageSelected)="onImageSelected($event)"
+          [contain]="true"
+          [autoplay]="false"
+        ></app-slider>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="tarif">
       <h4>CASA PEPPE | TARIF (À LA SEMAINE)</h4>
       <div class="price">
         <p>2380 € / haute saison 2025 : du 28 juin au 30 août</p>
-        <p>
-          2030 € / moyenne saison 2025 : du 3 mai au 28 juin et du 30 août au 27
-          septembre
-        </p>
-        <p>1820 € / le reste de l’année</p>
+        <p>2030 € / moyenne saison 2025 : du 3 mai au 28 juin et du 30 août au 27 septembre</p>
+        <p>1820 € / le reste de l'année</p>
       </div>
       <div class="content">
-        <p>
-          La location se fait à la semaine, du samedi au samedi (en haute saison
-          principalement).
-        </p>
-        <p>
-          Néanmoins, nous sommes ouverts à d’autres formules « à la carte ».
-        </p>
-        <p>N’hésitez pas à en faire la demande.</p>
+        <p>La location se fait à la semaine, du samedi au samedi (en haute saison principalement).</p>
+        <p>Néanmoins, nous sommes ouverts à d'autres formules « à la carte ».</p>
+        <p>N'hésitez pas à en faire la demande.</p>
         <p>Les dates cochées en orange ne sont plus disponibles.</p>
       </div>
     </div>
@@ -109,4 +106,5 @@
       ></iframe>
     </div>
   </footer>
+
 </div>
