@@ -91,6 +91,14 @@
   gap: 2rem;
 }
 
+.test {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
 /* ── FOOTER ───────────────────────────────────────────────────────────── */
 footer {
   position: relative;
