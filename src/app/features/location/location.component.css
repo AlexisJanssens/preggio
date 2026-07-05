@@ -1,106 +1,168 @@
-.p-one {
-  background-image: url("../../../assets/img/FONDS_webp/SITUATION_IMG_6344_1920.webp");
-}
-
-.top-layer {
-  height: 100vh;
-  width: 100%;
-  position: sticky;
-  top: 0;
-}
-
-.p-two {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.white-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(196, 196, 196, 0.5);
-}
-.buffer {
-  background-size: cover;
-  color: white;
-  position: relative;
-  z-index: 1;
-  background-color: rgb(96, 120, 119, 1);
-  padding: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-}
-
-.map {
-  height: 400px;
-  min-width: 332px;
-
-}
-.region {
-  height: 400px;
-  min-width: 454px;
-
-  background-size: cover;
-  background-position: center center;
-}
-
-.texte {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 20px;
-  width: 40%;
-}
-
-.parallax-inner {
+.container {
   position: relative;
   min-height: 100vh;
-  background-position: top center;
-  background-size: cover;
-}
-
-.text-absolute {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
-  color: white;
-  justify-content: flex-end;
-  margin-bottom: 15rem;
+}
+
+/* ── HERO ─────────────────────────────────────────────────────────────── */
+.above-fold {
+  height: calc(100vh - 77px);
+  background-image: url("../../../assets/img/FONDS_webp/SITUATION_IMG_6344_1920.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+
+.hero-text {
+  width: 1021.91px;
+  text-align: center;
+  color: white;
+  background-color: rgba(96, 120, 119, 0.308);
+  border: 1px solid rgb(255, 255, 255);
+  padding: 1rem 1rem;
+
   & p {
-    font-size: 50px;
-    font-weight: 200;
+    font-size: 33px;
+    font-weight: 300;
+    &.xl {
+      font-size: 56px;
+      line-height: 68px;
+    }
+    &.medium {
+      line-height: 54px;
+    }
   }
 }
 
-.grid-item {
-  display: flex;
+/* ── SECTIONS ─────────────────────────────────────────────────────────── */
+.section-cities,
+.section-galleries {
+  position: relative;
+  z-index: 1;
+  background-color: rgb(96, 120, 119);
 }
 
-.slide-show {
-  width: 100vw;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  background-color: rgb(96, 120, 119, 1);
+/* ── VILLES ───────────────────────────────────────────────────────────── */
+.section-cities {
+
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
-.slider-placeholder {
-  width: 100%;
-  height: 100%;
+.cities-wrapper {
+
+  margin: 0 auto;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  flex: 1;
+}
+
+.city-item {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: default;
+}
+
+.city-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+}
+
+.city-name,
+.city-dist {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+
+.city-name {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.city-dist {
+  font-size: 0.7rem;
+  font-weight: 300;
+  opacity: 0.75;
+  margin-top: 0.1rem;
+}
+
+/* ── MONTE TEZIO ──────────────────────────────────────────────────────── */
+.section-tezio {
+  position: relative;
+  z-index: 1;
+  background-color: rgb(96, 120, 119);
+  padding: 3rem;
+}
+
+.tezio-layout {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 auto;
+}
+
+.map-container {
+  flex: 1;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.cities-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.city-overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background-color: rgba(96, 120, 119, 0.55);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 0.75rem 1.25rem;
+  pointer-events: none;
+}
+
+.city-label {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.city-current {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+}
+
+.city-dist-current {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.85rem;
+  font-weight: 300;
 }

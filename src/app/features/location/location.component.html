@@ -1,46 +1,121 @@
-<div id="parallax-wrapper">
-  <section class="top-layer">
-    <div class="p-one parallax-inner">
-      <div class="text-absolute">
-        <p>PREGGIO est situé entre Florence et Rome,</p>
-        <p>plus précisément entre Cortona et Perugia.</p>
-        <p>Situation idéale pour visiter l’Ombrie et la Toscane.</p>
+<app-full-screen-slider></app-full-screen-slider>
+
+<div class="container">
+
+  <!-- Hero : image fixe + texte centré -->
+  <div class="above-fold">
+    <div class="hero-text">
+      <p class="xl">POUR VISITER L’OMBRIE ET LA TOSCANE ?</p>
+      <p class="xl">Preggio, la situation idéale !</p>
+      <p class="medium">Entre Cortona et Perugia</p>
+    </div>
+  </div>
+
+  <!-- VILLES -->
+  <section class="section-cities">
+    
+  </section>
+
+  <!-- MONTE TEZIO -->
+  <section class="section-tezio">
+    <div class="tezio-layout">
+      <!-- <div class="tezio-slider">
+        <app-fade-slider
+          [images]="slider()"
+          [isAutoplay]="true"
+          [showControls]="true"
+          (slideChange)="onSlideChange($event)"
+        ></app-fade-slider>
+        <div class="city-overlay">
+          <span class="city-label">À PROXIMITÉ</span>
+          <span class="city-current">{{ currentCity }}</span>
+          <span class="city-dist-current">{{ currentDist }}</span>
+        </div>
+      </div> -->
+      <div class="map-container">
+        <iframe
+          src="https://maps.google.com/maps?q=Preggio,Umbertide,Italy&t=m&z=9&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
+      <div class="cities-wrapper">
+    <div class="cities-grid">
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/LAGO_TRASIMENO_1200.webp')">
+        <span class="city-name">Lago Trasimeno</span>
+        <span class="city-dist">± 15 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/MONTONE_1200.webp')">
+        <span class="city-name">Montone</span>
+        <span class="city-dist">± 30 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/CORTONA_1200.webp')">
+        <span class="city-name">Cortona</span>
+        <span class="city-dist">± 35 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/PERUGIA_1200.webp')">
+        <span class="city-name">Perugia</span>
+        <span class="city-dist">± 35 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/citta-di-castello_1200.webp')">
+        <span class="city-name">Città di Castello</span>
+        <span class="city-dist">± 40 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/GUBBIO_1200.webp')">
+        <span class="city-name">Gubbio</span>
+        <span class="city-dist">± 45 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/ASSISI_1200.webp')">
+        <span class="city-name">Assisi</span>
+        <span class="city-dist">± 50 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/AREZZO_1200.webp')">
+        <span class="city-name">Arezzo</span>
+        <span class="city-dist">± 60 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/MONTEPULCIANO_1200.webp')">
+        <span class="city-name">Montepulciano</span>
+        <span class="city-dist">± 60 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/SPELLO_1200.webp')">
+        <span class="city-name">Spello</span>
+        <span class="city-dist">± 60 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/PIENZA_1200.webp')">
+        <span class="city-name">Pienza</span>
+        <span class="city-dist">± 70 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/TODI_1200.webp')">
+        <span class="city-name">Todi</span>
+        <span class="city-dist">± 70 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/CITTA_DELLA_PIEVE.webp')">
+        <span class="city-name">Città della Pieve</span>
+        <span class="city-dist">± 75 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/SIENNE_1200.webp')">
+        <span class="city-name">Siena</span>
+        <span class="city-dist">± 90 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/ORVIETO_1200.webp')">
+        <span class="city-name">Orvieto</span>
+        <span class="city-dist">± 110 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/FIRENZE_1200.webp')">
+        <span class="city-name">Firenze</span>
+        <span class="city-dist">± 140 km</span>
+      </div>
+      <div class="city-item" style="background-image: url('assets/img/SITUATION_SLIDE_webp/ROMA_1200.webp')">
+        <span class="city-name">Roma</span>
+        <span class="city-dist">± 200 km</span>
+      </div>
+    </div>
+    </div>
     </div>
   </section>
 
-  <section class="buffer">
-    <div class="map"></div>
-    <div class="region"></div>
-    <!-- <div class="texte">
-      <div class="header">
-        <p>Preggio est situé entre Florence et Rome.</p>
-        <p>Situation idéale pour visiter l’Ombrie et la Toscane.</p>
-      </div>
-      <div class="content">
-        <p>Quelques suggestions :</p>
-        <p>Lago Trasimeno ± 15 km | Passignano ± 20 km | Corciano± 20 km |</p>
-        <p>Montone ± 30 km | Cortona ± 35 km | Perugia ± 35 km |</p>
-        <p>Città di Castello ± 40 km | Panicalle ± 45 km | Gubbio ± 45 km |</p>
-        <p>Assisi ± 50 km | Arezzo ± 60 km | Città della Pieve ± 60 km |</p>
-        <p>Montepulciano ± 60 km | Spello ± 60 km | Pienza ± 70 km |</p>
-        <p>Foligno ± 70 km | Todi ± 70 km | Trevi ± 80 km | Siena ± 90 km |</p>
-        <p>Spoleto ± 100 km | Orvieto ± 110 km | Firenze ± 140 km |</p>
-        <p>Roma ± 200 km</p>
-      </div>
-    </div> -->
-  </section>
-  <section class="slide-show">
-    @if (slider().length > 0) {
-      <app-fade-slider
-        [images]="slider()"
-        [fixed]="true"
-        [isAutoplay]="true"
-      ></app-fade-slider>
-    } @else {
-      <div class="slider-placeholder">
-        <app-dots-loader />
-      </div>
-    }
-  </section>
 </div>
